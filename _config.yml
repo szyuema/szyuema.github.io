@@ -1,0 +1,34 @@
+markdown: kramdown
+highlighter: pygments
+permalink: /posts/:title.html
+excerpt_separator: "<!-- more -->"
+
+github: szyuema
+author: "马跃"
+email: 402870645@qq.com
+name: "马跃个人博客"
+url: https://szyuema.github.io/
+domain: https://szyuema.github.io/
+all_categories: [
+["JS", "JS","/posts/JS.html"], 
+# ["HTML&&HTML5", "HTML&&HTML5","/posts/HTML&&HTML5.html"],
+# ["CSS&&CSS3", "CSS&&CSS3","/posts/CSS&&CSS3.html"], 
+["vue", "vue学习","/posts/vue.html"],
+["frame", "框架学习","/posts/frame.html"],
+["Node", "Node","/posts/Node.html"],
+["git&&github", "git&&github","/posts/git&&github.html"],
+["read", "读书笔记","/posts/read.html"], 
+["lifeother", "生活杂记","/posts/lifeother.html"],
+["about", "关于","/about.html"]
+]
+
+paginate: 1
+paginate_path: "posts/page:num"
+timezone: America/Los_Angeles
+
+collections:
+  docs:
+    output: true
+
+gems:
+ - jekyll-paginate

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="vue学习资料 - 马跃个人博客 - 作者:马跃"/> 
+	<meta name="keywords" content="vue,js,资料"/>
+    <title>vue学习资料 - 马跃个人博客</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="/css/blog.css" rel="stylesheet"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media
+    queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://
+    -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+      </script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
+      </script>
+    <![endif]-->
+        <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"> </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+   
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">
+              Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+          <a class="navbar-brand" href="/">
+            首页
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          		<ul class="nav navbar-nav">
+			
+				<li>
+				  <a href="/posts/JS.html">
+					JS
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/posts/vue.html">
+					vue学习
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/posts/frame.html">
+					框架学习
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/posts/Node.html">
+					Node
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/posts/git&&github.html">
+					git&&github
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/posts/read.html">
+					读书笔记
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/posts/lifeother.html">
+					生活杂记
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/about.html">
+					关于
+				  </a>
+				</li>
+			
+		</ul>  
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+          <!-- Navi -->
+<a href="/">首页</a>&nbsp;>&nbsp;<a href="/posts/vue.html">vue学习</a>&nbsp;>&nbsp;正文
+<!-- Title -->
+<h2>vue学习资料</h2>
+<b>标签：</b><a href="/tags.html#vue"><i>vue</i></a>, <a href="/tags.html#js"><i>js</i></a>, <a href="/tags.html#资料"><i>资料</i></a>
+<div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2016-11-28
+</div>
+<br/>
+<hr>
+<!-- adsense_468x60 -->
+<div style="text-align:center;margin-top:15px;">
+	 <!-- 请修改_includes/adsense_468x60.html添加广告代码。 --> 
+</div>
+<br/>
+
+<!-- content -->
+<div style="text-indent:2em;">
+<h3 id="如何优雅地使用此文档">如何优雅地使用此文档</h3>
+<ol>
+  <li>入门先从官网文档入手，粗略过一遍有个印象，力求回查时能找到对应的关键字或位置。
+    <ul>
+      <li><a href="http://cn.vuejs.org/">vuejs中文官网</a></li>
+      <li><a href="http://vuejs.org/">vuejs英文官网</a></li>
+      <li><a href="https://github.com/vuejs">vuejs组织</a></li>
+    </ul>
+  </li>
+  <li>发出一个问题之后，不要暂时的离开电脑，如果没有把握先不要提问。</li>
+  <li>珍惜每一次提问，感恩每一次反馈，每个人工作还是业余之外抽出的时间有限，充分准备好应有的资源之后再发问，有利于问题能够高效质量地得到解决。尤其是具备解决问题能力的人，通常时间都很宝贵。</li>
+  <li>先搜索，再思考，最后再提问，很多人把这个顺序搞反了。</li>
+  <li>
+    <ul>
+      <li><a href="https://www.zhihu.com/question/25464141">如何优雅地向前辈或者高手请教技术问题？</a>
+以上部分观点出自此文 <a href="http://www.zhihu.com/question/20824615">如何优雅地使用 Stack Overflow</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="一-资源教程">一. 资源教程</h3>
+
+<ol>
+  <li>综合类
+    <ul>
+      <li><a href="https://github.com/vuejs/awesome-vue">vuejs 英文资料</a></li>
+      <li><a href="https://shimo.im/s/ab53739d-ca98-bd1e-aea0-fcc7378c6bb3">Vue中文资料总汇</a></li>
+      <li><a href="http://segmentfault.com/a/1190000000411057">Vue.js 的一些资源索引</a></li>
+      <li><a href="http://www.jianshu.com/p/afd8e1db7d9b">vue资料</a></li>
+      <li><a href="http://www.cnblogs.com/keepfool/p/5657065.html">Vue.js——vue-resource全攻略</a></li>
+    </ul>
+  </li>
+  <li>入门类
+    <ul>
+      <li><a href="http://segmentfault.com/a/1190000003968020">vue 快速入门</a></li>
+      <li><a href="https://segmentfault.com/a/1190000005018970">vuex - 入门教程实例1</a></li>
+      <li><a href="https://segmentfault.com/a/1190000005148935">vuex - 入门教程实例2</a></li>
+      <li><a href="https://segmentfault.com/a/1190000006988584">vuex - 入门教程实例3</a></li>
+    </ul>
+  </li>
+  <li>英文教程
+    <ul>
+      <li><a href="https://laracasts.com/series/learning-vue-step-by-step/">Learning Vue 1.0: Step By Step</a></li>
+      <li><a href="https://coligo.io/">vue Learning Tutorials</a></li>
+    </ul>
+  </li>
+  <li>社区
+    <ul>
+      <li><a href="http://segmentfault.com/t/vue.js">sf - vue标签</a></li>
+      <li><a href="https://www.zhihu.com/topic/20022242/questions">知乎 - vue标签</a></li>
+      <li><a href="http://vue-js.com/">Vue.js专业中文社区</a></li>
+      <li><a href="https://github.com/vuejs/vue/issues">vue - issues</a></li>
+    </ul>
+  </li>
+  <li>视频教程
+    <ul>
+      <li><a href="https://github.com/bhnddowinf/vuejs-learn">小凡哥录制视频教程</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="二-文档">二. 文档</h3>
+
+<ul>
+  <li>API
+    <ul>
+      <li><a href="http://cn.vuejs.org/api/">Vue.js - API</a></li>
+    </ul>
+  </li>
+  <li>router
+    <ul>
+      <li><a href="http://router.vuejs.org/zh-cn/index.html">vue-router文档</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="三-组件">三. 组件</h3>
+
+<h4 id="1-官方组件">1. 官方组件</h4>
+
+<ul>
+  <li>Loader
+    <ul>
+      <li><a href="https://github.com/vuejs/vue-html-loader">html loader module for webpack</a></li>
+    </ul>
+  </li>
+  <li>Router
+    <ul>
+      <li><a href="https://github.com/lazyhero/vue-spa-demo">vue-spa-demo</a></li>
+    </ul>
+  </li>
+  <li>Vuex：专门为 Vue.js 应用设计的状态管理架构
+    <ul>
+      <li><a href="http://vuex.vuejs.org/zh-cn/intro.html">vuex</a></li>
+    </ul>
+  </li>
+  <li>Ajax
+    <ul>
+      <li><a href="https://github.com/vuejs/vue-hackernews/blob/gh-pages/src/components/NewsView.vue#L61">vue + ajax</a></li>
+      <li><a href="https://github.com/vuejs/vue-resource">vue + ajax</a></li>
+      <li><a href="https://github.com/vuejs/vue-async-data">vue-async-data</a></li>
+    </ul>
+  </li>
+  <li>Vue-cli
+    <ul>
+      <li><a href="https://github.com/vuejs/vue-cli">Simple CLI for scaffolding Vue.js projects</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="2-其它组件">2. 其它组件</h4>
+
+<ul>
+  <li>UI类
+    <ul>
+      <li><a href="https://github.com/yuche/vue-strap">VueStrap：使用 Vue.js 和纯 JavaScript 构建的 Bootstrap 组件</a></li>
+      <li><a href="https://github.com/aidenzou/vue-weui">针对 Vue 框架移植的 We UI 框架的适配，让 mobile开发过程成为一种享受</a></li>
+      <li><a href="http://yuche.github.io/vue-strap/">vue bootstrap</a></li>
+      <li><a href="https://github.com/bravf/VueUI">基于Vue、Bootstrap的一套MVVM组件，简单、易用、功能强大</a></li>
+      <li><a href="https://github.com/eteplus/vue-sui-demo">用VUE 和 SUI-Mobile 写了一个移动端demo - vue-sui-demo</a></li>
+      <li><a href="https://github.com/airyland/vux">Mobile web UI based on Vue and Weui</a></li>
+      <li><a href="http://mint-ui.github.io/">Mint UI 基于 Vue.js 的移动端组件库</a></li>
+      <li><a href="https://github.com/fundon/vue-admin">Vue Admin Panel Framework [WIP] </a></li>
+      <li><a href="https://github.com/qusiba/vue-slider">Vue 的图片轮播组件</a></li>
+      <li><a href="https://github.com/myronliu347/vue-carbon">基于vue开发的material design ui库</a></li>
+      <li><a href="http://gold.xitu.io/post/57b535405bbb50006300ffc9">iView：一套基于Vue的高质量UI组件库</a></li>
+    </ul>
+  </li>
+  <li>表格
+    <ul>
+      <li><a href="https://github.com/jinzhe/vue-editable">ZEE大神作品 - vue-editable</a></li>
+    </ul>
+  </li>
+  <li>分页
+    <ul>
+      <li><a href="http://segmentfault.com/a/1190000003931500">vue入门－实现一个分页组件(1.0.3版本)</a></li>
+      <li><a href="https://github.com/cycgit/vue-pagination">vue(1.0.3) 分页组件</a></li>
+      <li><a href="https://www.npmjs.com/package/vue-pagination">分页组件 – 命令方式，支持多个，主要靠配置</a></li>
+    </ul>
+  </li>
+  <li>移动
+    <ul>
+      <li><a href="https://github.com/vuejs/vue-touch">Hammer.js wrapper for Vue.js</a></li>
+      <li><a href="https://github.com/MeCKodo/vue-tap">vue的tap手势插件</a></li>
+    </ul>
+  </li>
+  <li>微信
+    <ul>
+      <li><a href="http://aidenzou.github.io/vue-weui/">为微信Web服务量身设计</a></li>
+    </ul>
+  </li>
+  <li>日历
+    <ul>
+      <li><a href="https://github.com/jinzhe/vue-calendar">ZEE大神作品 - vue-calendar</a></li>
+      <li><a href="https://github.com/hilongjw/vue-datepicker">Awe - 日历组件</a></li>
+      <li><a href="https://github.com/jas0ncn/vue-timepicker">jas0ncn - 日历组件</a></li>
+    </ul>
+  </li>
+  <li>进度条
+    <ul>
+      <li><a href="https://github.com/greyby/vue-spinner">vue 进度条</a></li>
+    </ul>
+  </li>
+  <li>验证
+    <ul>
+      <li><a href="https://github.com/vuejs/vue-validator">Validator component for VueJS</a></li>
+      <li><a href="https://github.com/xrado/vue-validator">form validator for vue 0.11</a></li>
+    </ul>
+  </li>
+  <li>Lazyload
+    <ul>
+      <li><a href="https://github.com/hilongjw/vue-lazyload">图片的lazyload</a></li>
+      <li><a href="https://github.com/ElemeFE/vue-loadmore">下拉加载</a></li>
+    </ul>
+  </li>
+  <li>Loader
+    <ul>
+      <li><a href="http://segmentfault.com/a/1190000004060034">【vue】vue组件化开发初体验-示例vue-loader-example学习记录</a></li>
+    </ul>
+  </li>
+  <li>Uploader
+    <ul>
+      <li><a href="https://www.npmjs.com/package/vue-file-upload">vue-file-upload</a></li>
+      <li><a href="https://www.npmjs.com/package/vue-file-upload-component">vue-file-upload-component</a></li>
+    </ul>
+  </li>
+  <li>Slide
+    <ul>
+      <li><a href="https://github.com/guan6/vue-onlySlider-x">vue-onlySlider-x</a></li>
+    </ul>
+  </li>
+  <li>Drag
+    <ul>
+      <li><a href="https://github.com/james2doyle/vue-drag-and-drop">vue-drag-and-drop</a></li>
+    </ul>
+  </li>
+  <li>二维码
+    <ul>
+      <li><a href="https://github.com/xiaokaike/vue-qrcode">vue-qrcode</a></li>
+    </ul>
+  </li>
+  <li>省市联动
+    <ul>
+      <li><a href="https://github.com/QingWei-Li/vue-region-picker">Vue 省市区三级联动组件</a></li>
+    </ul>
+  </li>
+  <li>TimeLine
+    <ul>
+      <li><a href="https://github.com/yelingfeng/vue-timelinepick">Vue企业级时间轴选择器</a></li>
+    </ul>
+  </li>
+  <li>Template
+    <ul>
+      <li><a href="https://github.com/yelingfeng/vue-ylf-template">vue2.0模板</a></li>
+      <li><a href="https://github.com/yelingfeng/vue-2.0-FamilyBucket">vue2.0全家桶实例</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="四-示例">四. 示例</h3>
+
+<ul>
+  <li>综合示例
+    <ul>
+      <li><a href="http://cn-stage.vuejs.org/examples/">官方例子 - 包括Markdown编辑器，表格组件等</a></li>
+      <li><a href="https://github.com/vingojw/vue-vueRouter-webpack">Vue, vue-router, Webpack 和 vue-loader</a></li>
+      <li><a href="https://github.com/KennyWho/vue-chestnut">简单的vuejs例子 - 群内高手X-Roy大作</a></li>
+      <li><a href="https://github.com/toplan/vue-spa-example">vue single page app example</a></li>
+      <li><a href="http://segmentfault.com/a/1190000004372736">使用node+vue.js实现SPA应用</a></li>
+    </ul>
+  </li>
+  <li>Ajax
+    <ul>
+      <li><a href="https://github.com/james2doyle/vue-ajax-form-component">A Vue.js component for creating simple AJAX forms.</a></li>
+    </ul>
+  </li>
+  <li>Webpack
+    <ul>
+      <li><a href="http://jiongks.name/blog/just-vue/">Vue + webpack 项目实践</a></li>
+      <li><a href="http://segmentfault.com/a/1190000003630417">基于vue.js和webpack的Chat示例</a></li>
+      <li><a href="http://djyde.github.io/2015/08/29/vuejs-and-webpack-1/">Vue.js 和 Webpack（一）</a></li>
+      <li><a href="http://djyde.github.io/2015/08/30/vuejs-and-webpack-2/">Vue.js 和 Webpack（二）</a></li>
+      <li><a href="http://djyde.github.io/2015/08/31/vuejs-and-webpack-3/">Vue.js 和 Webpack（三）</a></li>
+      <li><a href="https://github.com/MeCKodo/webpack">二哲 - 结合具体项目的webpack配置</a></li>
+    </ul>
+  </li>
+  <li>Gulp
+    <ul>
+      <li><a href="https://github.com/JsAaron/vue-gulp-webpack">vue-gulp-webpack单页面组件开发</a></li>
+    </ul>
+  </li>
+  <li>Tab
+    <ul>
+      <li><a href="http://yuche.github.io/vue-strap/#tabs">vue tab</a></li>
+    </ul>
+  </li>
+  <li>Shopping
+    <ul>
+      <li><a href="https://github.com/andylei18/vue-shopping">基于Vue模仿蘑菇街的单页应用</a></li>
+    </ul>
+  </li>
+  <li>其它
+    <ul>
+      <li><a href="http://okoala.github.io/vue-antd/#!/docs/introduce">Ant Design 的 Vue 实现</a></li>
+      <li><a href="https://github.com/shinygang/Vue-cnodejs">基于vue.js重写Cnodejs.org社区的webapp</a></li>
+      <li><a href="https://github.com/giscafer/Ponitor">北京-giscafer - vue+webpack+node.js 价格监测应用</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="五-开发工具相关">五. 开发工具相关</h3>
+
+<ol>
+  <li>Atom
+    <ul>
+      <li><a href="https://github.com/CYBAI/language-vue-component">atom vue 代码高亮</a></li>
+      <li><a href="http://www.jianshu.com/p/98f99c20493c">如何发布一个Atom的package</a></li>
+      <li><a href="https://atom.io/packages/vue-format">vue-format</a></li>
+    </ul>
+  </li>
+  <li>Sublime-text
+    <ul>
+      <li><a href="https://github.com/vuejs/vue-syntax-highlight">Vue Syntax Highlight</a></li>
+    </ul>
+  </li>
+  <li>Webstorm
+    <ul>
+      <li><a href="http://www.lred.me/2016/01/07/webstorm%E6%B7%BB%E5%8A%A0-vue%E6%96%87%E4%BB%B6%E6%94%AF%E6%8C%81/">webstorm添加*.vue文件支持</a></li>
+      <li><a href="https://plugins.jetbrains.com/plugin/8057?pr=webStorm">webstorm vue插件</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="六-答疑">六. 答疑</h3>
+
+<ul>
+  <li><a href="http://www.jianshu.com/p/7f7f050c9edf">Vue.js为什么不支持templateUrl模式</a></li>
+  <li><a href="https://github.com/jrainlau/vuejs-demo">实现了vuejs组件之间的通讯问题</a></li>
+  <li><a href="https://www.zhihu.com/question/38213423">国内有哪些公司在用Vue.js，有什么心得</a></li>
+  <li><a href="https://www.zhihu.com/question/39149401">vue 支持服务器端渲染吗</a></li>
+  <li><a href="http://div.io/topic/1343">Vue.js 和 Webpack</a></li>
+</ul>
+
+<h3 id="七-源码学习">七. 源码学习</h3>
+
+<ul>
+  <li><a href="http://jiongks.name/blog/vue-code-review">Vue.js 源码学习笔记</a></li>
+  <li><a href="http://www.cnblogs.com/sskyy/p/3695003.html">VUE 源码分析</a></li>
+  <li><a href="http://segmentfault.com/a/1190000004384515">vue源码分析之如何实现observer和watcher</a></li>
+  <li><a href="https://segmentfault.com/a/1190000004670036">vue源码解析之一：transition</a></li>
+  <li><a href="https://github.com/JsAaron/vue-analysis">Vue源码学习 Vue.js v1.0.18</a></li>
+</ul>
+
+<h3 id="八-框架相关">八. 框架相关</h3>
+
+<ul>
+  <li><a href="http://www.imooc.com/video/6346">尤小右 - 4-1 Vue.js-数据驱动的组件化前端开…</a></li>
+  <li><a href="https://simplecast.fm/s/5e60d9be">Evan You - Diving Deep into Vue.js</a></li>
+</ul>
+
+</div>
+
+<br/>
+<b>原创文章，转载请注明出处！</b>
+<br/>
+<b>本文链接：</b><a href="http://localhost:4000/posts/vue-means.html" title="">http://localhost:4000/posts/vue-means.html</a>
+
+<!-- next and previous -->
+<div style="margin-top:15px; margin-bottom:10px">
+  
+  <span class="next">
+    上篇：
+    <a href="/posts/reg.html">
+      常用正则
+    </a>
+  </span>
+   
+  
+</div>
+<hr>
+<!-- Blog Comments -->
+<div class="media">
+  <!-- 请修改_includes/comment.html添加评论代码。 --> 
+</div>
+        </div>
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+          <!-- Blog Categories Well -->
+          <div class="well">
+            <h4>
+              栏目分类
+            </h4>
+            <div class="row">
+                           <!-- 栏目分类 -->
+              <div class="col-lg-6">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="/posts/JS.html">
+                      JS
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/posts/Vue.html">
+                      Vue
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/posts/Node.html">
+                      Node
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/faqs.html">
+                      FAQS
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.col-lg-6 -->
+              <div class="col-lg-6">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="/read.html">
+                      读书笔记
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/posts/other.html">
+                      杂记
+                    </a>
+                  </li>
+                     <li>
+                    <a href="/archives.html">
+                      存档
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.col-lg-6 -->
+ 
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- Side Widget Well -->
+          <div class="well-ad">
+            <!-- 请修改_includes/adsense.html添加广告代码。 --> 
+          </div>
+		  <!-- Blog Recent Well -->
+          <div class="well">
+            <h4>
+              最新文章
+            </h4>
+			<div class="row">
+                            <div class="col-lg-12">
+                <ul class="list-unstyled">
+				
+                  <li>
+                    <a href="/posts/vue-means.html">
+                      vue学习资料
+                    </a>
+                  </li>
+				
+                  <li>
+                    <a href="/posts/reg.html">
+                      常用正则
+                    </a>
+                  </li>
+				
+                  <li>
+                    <a href="/posts/markdown-basics.html">
+                      markdown 快速入门
+                    </a>
+                  </li>
+				  
+                </ul>
+              </div> 
+			</div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Footer -->
+      <footer>
+		<div style="text-align:center">
+			<!-- 请修改_includes/adsense_728x90.html添加广告代码。 --> 
+		</div>
+        <div class="row">
+          <div class="col-lg-12">
+                        <div style="text-align:center;margin-top:15px;">
+				Copyright &copy;  generated by szyuema, designed by <a href=" https://szyuema.github.io/">szyuema</a>. <a href="https://github.com/szyuema/szyuema.github.com">[source]</a>
+				<br/>
+				<!-- 请修改_includes/copyright.html添加统计代码。 -->
+            </div>
+ 
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+      </footer>
+    </div>
+ <div >
+            <div class="cb-search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
+      opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control cb-search-content" id="cb-search-content" style="position: fixed; top: 60px" placeholder="文章标题 日期 标签" >
+
+    <div style="position: fixed; top: 16px; right: 16px;">
+        <img src="/search/img/cb-close.png"  id="cb-close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; top: 60px;">
+    <img src="/search/img/cb-search.png"  id="cb-search-btn"  title="双击ctrl试一下"/>
+</div>
+
+<link rel="stylesheet" href="/search/css/cb-search.css">
+
+<script src="/search/js/bootstrap3-typeahead.min.js"></script>
+<script src="/search/js/cb-search.js"></script>
+ 
+          </div>
+    <!-- /.container -->
+  </body>
+
+</html>

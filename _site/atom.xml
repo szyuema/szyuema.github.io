@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title></title>
+ <link href="http://https://szyuema.github.io//atom.xml" rel="self"/>
+ <link href="http://https://szyuema.github.io/"/>
+ <updated>2016-11-28T06:57:53+00:00</updated>
+ <author>
+   <name>马跃</name>
+   <email>402870645@qq.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>vue学习资料</title>
+   <link href="http://https://szyuema.github.io//posts/vue-means.html"/>
+   <updated>2016-11-28T00:00:00+00:00</updated>
+   <id>/posts/vue-means</id>
+   <content type="html">&lt;h3 id=&quot;如何优雅地使用此文档&quot;&gt;如何优雅地使用此文档&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;入门先从官网文档入手，粗略过一遍有个印象，力求回查时能找到对应的关键字或位置。
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://cn.vuejs.org/&quot;&gt;vuejs中文官网&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vuejs.org/&quot;&gt;vuejs英文官网&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vuejs&quot;&gt;vuejs组织&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;发出一个问题之后，不要暂时的离开电脑，如果没有把握先不要提问。&lt;/li&gt;
+  &lt;li&gt;珍惜每一次提问，感恩每一次反馈，每个人工作还是业余之外抽出的时间有限，充分准备好应有的资源之后再发问，有利于问题能够高效质量地得到解决。尤其是具备解决问题能力的人，通常时间都很宝贵。&lt;/li&gt;
+  &lt;li&gt;先搜索，再思考，最后再提问，很多人把这个顺序搞反了。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/25464141&quot;&gt;如何优雅地向前辈或者高手请教技术问题？&lt;/a&gt;
+以上部分观点出自此文 &lt;a href=&quot;http://www.zhihu.com/question/20824615&quot;&gt;如何优雅地使用 Stack Overflow&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;一-资源教程&quot;&gt;一. 资源教程&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;综合类
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/awesome-vue&quot;&gt;vuejs 英文资料&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://shimo.im/s/ab53739d-ca98-bd1e-aea0-fcc7378c6bb3&quot;&gt;Vue中文资料总汇&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000000411057&quot;&gt;Vue.js 的一些资源索引&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/afd8e1db7d9b&quot;&gt;vue资料&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/keepfool/p/5657065.html&quot;&gt;Vue.js——vue-resource全攻略&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;入门类
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000003968020&quot;&gt;vue 快速入门&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000005018970&quot;&gt;vuex - 入门教程实例1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000005148935&quot;&gt;vuex - 入门教程实例2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000006988584&quot;&gt;vuex - 入门教程实例3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;英文教程
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://laracasts.com/series/learning-vue-step-by-step/&quot;&gt;Learning Vue 1.0: Step By Step&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://coligo.io/&quot;&gt;vue Learning Tutorials&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;社区
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://segmentfault.com/t/vue.js&quot;&gt;sf - vue标签&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/topic/20022242/questions&quot;&gt;知乎 - vue标签&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vue-js.com/&quot;&gt;Vue.js专业中文社区&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue/issues&quot;&gt;vue - issues&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;视频教程
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/bhnddowinf/vuejs-learn&quot;&gt;小凡哥录制视频教程&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;二-文档&quot;&gt;二. 文档&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;API
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://cn.vuejs.org/api/&quot;&gt;Vue.js - API&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;router
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://router.vuejs.org/zh-cn/index.html&quot;&gt;vue-router文档&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;三-组件&quot;&gt;三. 组件&lt;/h3&gt;
+
+&lt;h4 id=&quot;1-官方组件&quot;&gt;1. 官方组件&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Loader
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-html-loader&quot;&gt;html loader module for webpack&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Router
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/lazyhero/vue-spa-demo&quot;&gt;vue-spa-demo&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Vuex：专门为 Vue.js 应用设计的状态管理架构
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vuex.vuejs.org/zh-cn/intro.html&quot;&gt;vuex&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ajax
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-hackernews/blob/gh-pages/src/components/NewsView.vue#L61&quot;&gt;vue + ajax&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-resource&quot;&gt;vue + ajax&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-async-data&quot;&gt;vue-async-data&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Vue-cli
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-cli&quot;&gt;Simple CLI for scaffolding Vue.js projects&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-其它组件&quot;&gt;2. 其它组件&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;UI类
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/yuche/vue-strap&quot;&gt;VueStrap：使用 Vue.js 和纯 JavaScript 构建的 Bootstrap 组件&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/aidenzou/vue-weui&quot;&gt;针对 Vue 框架移植的 We UI 框架的适配，让 mobile开发过程成为一种享受&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://yuche.github.io/vue-strap/&quot;&gt;vue bootstrap&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/bravf/VueUI&quot;&gt;基于Vue、Bootstrap的一套MVVM组件，简单、易用、功能强大&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/eteplus/vue-sui-demo&quot;&gt;用VUE 和 SUI-Mobile 写了一个移动端demo - vue-sui-demo&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/airyland/vux&quot;&gt;Mobile web UI based on Vue and Weui&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://mint-ui.github.io/&quot;&gt;Mint UI 基于 Vue.js 的移动端组件库&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/fundon/vue-admin&quot;&gt;Vue Admin Panel Framework [WIP] &lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/qusiba/vue-slider&quot;&gt;Vue 的图片轮播组件&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/myronliu347/vue-carbon&quot;&gt;基于vue开发的material design ui库&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://gold.xitu.io/post/57b535405bbb50006300ffc9&quot;&gt;iView：一套基于Vue的高质量UI组件库&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;表格
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/jinzhe/vue-editable&quot;&gt;ZEE大神作品 - vue-editable&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;分页
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000003931500&quot;&gt;vue入门－实现一个分页组件(1.0.3版本)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/cycgit/vue-pagination&quot;&gt;vue(1.0.3) 分页组件&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/vue-pagination&quot;&gt;分页组件 – 命令方式，支持多个，主要靠配置&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;移动
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-touch&quot;&gt;Hammer.js wrapper for Vue.js&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/MeCKodo/vue-tap&quot;&gt;vue的tap手势插件&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;微信
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://aidenzou.github.io/vue-weui/&quot;&gt;为微信Web服务量身设计&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;日历
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/jinzhe/vue-calendar&quot;&gt;ZEE大神作品 - vue-calendar&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/hilongjw/vue-datepicker&quot;&gt;Awe - 日历组件&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/jas0ncn/vue-timepicker&quot;&gt;jas0ncn - 日历组件&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;进度条
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/greyby/vue-spinner&quot;&gt;vue 进度条&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;验证
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-validator&quot;&gt;Validator component for VueJS&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/xrado/vue-validator&quot;&gt;form validator for vue 0.11&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Lazyload
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/hilongjw/vue-lazyload&quot;&gt;图片的lazyload&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ElemeFE/vue-loadmore&quot;&gt;下拉加载&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Loader
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000004060034&quot;&gt;【vue】vue组件化开发初体验-示例vue-loader-example学习记录&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Uploader
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/vue-file-upload&quot;&gt;vue-file-upload&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/vue-file-upload-component&quot;&gt;vue-file-upload-component&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Slide
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/guan6/vue-onlySlider-x&quot;&gt;vue-onlySlider-x&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Drag
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/james2doyle/vue-drag-and-drop&quot;&gt;vue-drag-and-drop&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;二维码
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/xiaokaike/vue-qrcode&quot;&gt;vue-qrcode&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;省市联动
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/QingWei-Li/vue-region-picker&quot;&gt;Vue 省市区三级联动组件&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;TimeLine
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/yelingfeng/vue-timelinepick&quot;&gt;Vue企业级时间轴选择器&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Template
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/yelingfeng/vue-ylf-template&quot;&gt;vue2.0模板&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/yelingfeng/vue-2.0-FamilyBucket&quot;&gt;vue2.0全家桶实例&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;四-示例&quot;&gt;四. 示例&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;综合示例
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://cn-stage.vuejs.org/examples/&quot;&gt;官方例子 - 包括Markdown编辑器，表格组件等&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vingojw/vue-vueRouter-webpack&quot;&gt;Vue, vue-router, Webpack 和 vue-loader&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/KennyWho/vue-chestnut&quot;&gt;简单的vuejs例子 - 群内高手X-Roy大作&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/toplan/vue-spa-example&quot;&gt;vue single page app example&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000004372736&quot;&gt;使用node+vue.js实现SPA应用&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ajax
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/james2doyle/vue-ajax-form-component&quot;&gt;A Vue.js component for creating simple AJAX forms.&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Webpack
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://jiongks.name/blog/just-vue/&quot;&gt;Vue + webpack 项目实践&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000003630417&quot;&gt;基于vue.js和webpack的Chat示例&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://djyde.github.io/2015/08/29/vuejs-and-webpack-1/&quot;&gt;Vue.js 和 Webpack（一）&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://djyde.github.io/2015/08/30/vuejs-and-webpack-2/&quot;&gt;Vue.js 和 Webpack（二）&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://djyde.github.io/2015/08/31/vuejs-and-webpack-3/&quot;&gt;Vue.js 和 Webpack（三）&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/MeCKodo/webpack&quot;&gt;二哲 - 结合具体项目的webpack配置&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Gulp
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/JsAaron/vue-gulp-webpack&quot;&gt;vue-gulp-webpack单页面组件开发&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tab
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://yuche.github.io/vue-strap/#tabs&quot;&gt;vue tab&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Shopping
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/andylei18/vue-shopping&quot;&gt;基于Vue模仿蘑菇街的单页应用&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;其它
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://okoala.github.io/vue-antd/#!/docs/introduce&quot;&gt;Ant Design 的 Vue 实现&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/shinygang/Vue-cnodejs&quot;&gt;基于vue.js重写Cnodejs.org社区的webapp&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/giscafer/Ponitor&quot;&gt;北京-giscafer - vue+webpack+node.js 价格监测应用&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;五-开发工具相关&quot;&gt;五. 开发工具相关&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Atom
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/CYBAI/language-vue-component&quot;&gt;atom vue 代码高亮&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/98f99c20493c&quot;&gt;如何发布一个Atom的package&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://atom.io/packages/vue-format&quot;&gt;vue-format&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sublime-text
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-syntax-highlight&quot;&gt;Vue Syntax Highlight&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Webstorm
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.lred.me/2016/01/07/webstorm%E6%B7%BB%E5%8A%A0-vue%E6%96%87%E4%BB%B6%E6%94%AF%E6%8C%81/&quot;&gt;webstorm添加*.vue文件支持&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://plugins.jetbrains.com/plugin/8057?pr=webStorm&quot;&gt;webstorm vue插件&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;六-答疑&quot;&gt;六. 答疑&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/7f7f050c9edf&quot;&gt;Vue.js为什么不支持templateUrl模式&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jrainlau/vuejs-demo&quot;&gt;实现了vuejs组件之间的通讯问题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/38213423&quot;&gt;国内有哪些公司在用Vue.js，有什么心得&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/39149401&quot;&gt;vue 支持服务器端渲染吗&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://div.io/topic/1343&quot;&gt;Vue.js 和 Webpack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;七-源码学习&quot;&gt;七. 源码学习&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jiongks.name/blog/vue-code-review&quot;&gt;Vue.js 源码学习笔记&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/sskyy/p/3695003.html&quot;&gt;VUE 源码分析&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000004384515&quot;&gt;vue源码分析之如何实现observer和watcher&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000004670036&quot;&gt;vue源码解析之一：transition&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/JsAaron/vue-analysis&quot;&gt;Vue源码学习 Vue.js v1.0.18&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;八-框架相关&quot;&gt;八. 框架相关&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.imooc.com/video/6346&quot;&gt;尤小右 - 4-1 Vue.js-数据驱动的组件化前端开…&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://simplecast.fm/s/5e60d9be&quot;&gt;Evan You - Diving Deep into Vue.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>常用正则</title>
+   <link href="http://https://szyuema.github.io//posts/reg.html"/>
+   <updated>2016-11-28T00:00:00+00:00</updated>
+   <id>/posts/reg</id>
+   <content type="html">&lt;h3 id=&quot;以下是常用的代码收集没有任何技术含量只是填坑的积累转载请注明出处谢谢&quot;&gt;以下是常用的代码收集，没有任何技术含量，只是填坑的积累。转载请注明出处，谢谢。&lt;/h3&gt;
+
+&lt;p&gt;###常用的js正则表达式&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;//正整数
+/^[0-9]*[1-9][0-9]*$/;
+//负整数
+/^-[0-9]*[1-9][0-9]*$/;
+//正浮点数
+/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/;   
+//负浮点数
+/^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/;  
+//浮点数
+/^(-?\d+)(\.\d+)?$/;
+//email地址
+/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+//url地址
+/^[a-zA-z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\S*)?$/;
+或：^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&amp;amp;_~`@[\]\':+!]*([^&amp;lt;&amp;gt;\&quot;\&quot;])*$ 
+//年/月/日（年-月-日、年.月.日）
+/^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/;
+//匹配中文字符
+/[\u4e00-\u9fa5]/;
+//匹配帐号是否合法(字母开头，允许5-10字节，允许字母数字下划线)
+/^[a-zA-Z][a-zA-Z0-9_]{4,9}$/;
+//匹配空白行的正则表达式
+/\n\s*\r/;
+//匹配中国邮政编码
+/[1-9]\d{5}(?!\d)/;
+//匹配身份证
+/\d{15}|\d{18}/;
+//匹配国内电话号码
+/(\d{3}-|\d{4}-)?(\d{8}|\d{7})?/;
+//匹配IP地址
+/((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/;
+//匹配首尾空白字符的正则表达式
+/^\s*|\s*$/;
+//匹配HTML标记的正则表达式
+&amp;lt; (\S*?)[^&amp;gt;]*&amp;gt;.*?|&amp;lt; .*? /&amp;gt;;
+//sql 语句
+^(select|drop|delete|create|update|insert).*$
+//提取信息中的网络链接
+(h|H)(r|R)(e|E)(f|F) *= *('|&quot;)?(\w|\\|\/|\.)+('|&quot;| *|&amp;gt;)? 
+//提取信息中的邮件地址
+\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)* 
+//提取信息中的图片链接
+(s|S)(r|R)(c|C) *= *('|&quot;)?(\w|\\|\/|\.)+('|&quot;| *|&amp;gt;)? 
+//提取信息中的 IP 地址
+(\d+)\.(\d+)\.(\d+)\.(\d+)
+//取信息中的中国手机号码
+(86)*0*13\d{9} 
+//提取信息中的中国邮政编码
+[1-9]{1}(\d+){5} 
+//提取信息中的浮点数（即小数）
+(-?\d*)\.?\d+ 
+//提取信息中的任何数字
+(-?\d*)(\.\d+)?
+//电话区号
+^0\d{2,3}$
+//腾讯 QQ 号
+^[1-9]*[1-9][0-9]*$ 
+//帐号（字母开头，允许 5-16 字节，允许字母数字下划线）
+^[a-zA-Z][a-zA-Z0-9_]{4,15}$ 
+//中文、英文、数字及下划线
+^[\u4e00-\u9fa5_a-zA-Z0-9]+$
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>markdown 快速入门</title>
+   <link href="http://https://szyuema.github.io//posts/markdown-basics.html"/>
+   <updated>2014-07-10T00:00:00+00:00</updated>
+   <id>/posts/markdown-basics</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;声明：&lt;/strong&gt; 这份文档派生(fork)于&lt;a href=&quot;http://markdown.tw/&quot;&gt;繁体中文版&lt;/a&gt;，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里&lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/basics.md&quot;&gt;查看它的源文件&lt;/a&gt;。「繁体中文版的原始文件可以&lt;a href=&quot;https://github.com/othree/markdown-syntax-zhtw/blob/master/basics.md&quot;&gt;查看这里&lt;/a&gt;」–By @&lt;a href=&quot;http://twitter.com/riku&quot;&gt;riku&lt;/a&gt; / 本项目托管于 &lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN&quot;&gt;GitCafe&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 本项目同时也托管于 &lt;a href=&quot;https://github.com/riku/Markdown-Syntax-CN&quot;&gt;Github&lt;/a&gt;上，请通过 fork＋pull request 方式来帮忙改进本项目。&lt;/p&gt;
+
+&lt;h1 id=&quot;markdown-basics-快速入门--点击查看完整语法说明&quot;&gt;Markdown: Basics （快速入门） / (&lt;a href=&quot;./markdown-syntax.html&quot;&gt;点击查看完整语法说明&lt;/a&gt;)&lt;/h1&gt;
+
+&lt;h2 id=&quot;getting-the-gist-of-markdowns-formatting-syntax&quot;&gt;Getting the Gist of Markdown’s Formatting Syntax&lt;/h2&gt;
+
+&lt;p&gt;此页提供了 Markdown 的简单概念， &lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md&quot; title=&quot;Markdown Syntax&quot;&gt;语法说明&lt;/a&gt; 页提供了完整详细的文档，说明了每项功能。但是 Markdown 其实很简单就可以上手，此页文档提供了一些范例，并且每个范例都会提供输出的 HTML 结果。&lt;/p&gt;
+
+&lt;p&gt;其实直接试试看也是一个很不错的方法， &lt;a href=&quot;http://daringfireball.net/projects/markdown/dingus&quot; title=&quot;Markdown Dingus&quot;&gt;Dingus&lt;/a&gt; 是一个网页应用程序，你可以把自已编写的 Markdown 文档转成 XHTML。&lt;/p&gt;
+
+&lt;h2 id=&quot;段落标题区块代码&quot;&gt;段落、标题、区块代码&lt;/h2&gt;
+
+&lt;p&gt;一个段落是由一个以上的连接的行句组成，而一个以上的空行则会划分出不同的段落（空行的定义是显示上看起来像是空行，就被视为空行，例如有一行只有空白和 tab，那该行也会被视为空行），一般的段落不需要用空白或换行缩进。&lt;/p&gt;
+
+&lt;p&gt;Markdown 支持两种标题的语法，&lt;a href=&quot;http://docutils.sourceforge.net/mirror/setext.html&quot;&gt;Setext&lt;/a&gt; 和 &lt;a href=&quot;http://www.aaronsw.com/2002/atx/&quot;&gt;atx&lt;/a&gt; 形式。Setext 形式是用底线的形式，利用 &lt;code&gt;=&lt;/code&gt; （最高阶标题）和 &lt;code&gt;-&lt;/code&gt; （第二阶标题），Atx 形式在行首插入 1 到 6 个 &lt;code&gt;#&lt;/code&gt; ，对应到标题 1 到 6 阶。&lt;/p&gt;
+
+&lt;p&gt;区块引用则使用 email 形式的 ‘&lt;code&gt;&amp;gt;&lt;/code&gt;’ 角括号。&lt;/p&gt;
+
+&lt;p&gt;Markdown 语法:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A First Level Header
+====================
+A Second Level Header
+---------------------
+
+Now is the time for all good men to come to
+the aid of their country. This is just a
+regular paragraph.
+
+The quick brown fox jumped over the lazy
+dog's back.
+### Header 3
+
+&amp;gt; This is a blockquote.
+&amp;gt; 
+&amp;gt; This is the second paragraph in the blockquote.
+&amp;gt;
+&amp;gt; ## This is an H2 in a blockquote
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出 HTML 为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;h1&amp;gt;A First Level Header&amp;lt;/h1&amp;gt;
+&amp;lt;h2&amp;gt;A Second Level Header&amp;lt;/h2&amp;gt;
+&amp;lt;p&amp;gt;Now is the time for all good men to come to
+the aid of their country. This is just a
+regular paragraph.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The quick brown fox jumped over the lazy
+dog's back.&amp;lt;/p&amp;gt;
+&amp;lt;h3&amp;gt;Header 3&amp;lt;/h3&amp;gt;
+&amp;lt;blockquote&amp;gt;
+&amp;lt;p&amp;gt;This is a blockquote.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;This is the second paragraph in the blockquote.&amp;lt;/p&amp;gt;
+&amp;lt;h2&amp;gt;This is an H2 in a blockquote&amp;lt;/h2&amp;gt;
+&amp;lt;/blockquote&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;修辞和强调&quot;&gt;修辞和强调&lt;/h3&gt;
+
+&lt;p&gt;Markdown 使用星号和底线来标记需要强调的区段。&lt;/p&gt;
+
+&lt;p&gt;Markdown 语法:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Some of these words *are emphasized*.
+Some of these words _are emphasized also_.
+Use two asterisks for **strong emphasis**.
+Or, if you prefer, __use two underscores instead__.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出 HTML 为:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Some of these words &amp;lt;em&amp;gt;are emphasized&amp;lt;/em&amp;gt;.
+Some of these words &amp;lt;em&amp;gt;are emphasized also&amp;lt;/em&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Use two asterisks for &amp;lt;strong&amp;gt;strong emphasis&amp;lt;/strong&amp;gt;.
+Or, if you prefer, &amp;lt;strong&amp;gt;use two underscores instead&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;列表&quot;&gt;列表&lt;/h2&gt;
+
+&lt;p&gt;无序列表使用星号、加号和减号来做为列表的项目标记，这些符号是都可以使用的，使用星号：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* Candy.
+* Gum.
+* Booze.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;加号：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+ Candy.
++ Gum.
++ Booze.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;和减号&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- Candy.
+- Gum.
+- Booze.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;都会输出 HTML 为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;Candy.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Gum.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Booze.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;有序的列表则是使用一般的数字接着一个英文句点作为项目标记：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1. Red
+2. Green
+3. Blue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出 HTML 为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ol&amp;gt;
+&amp;lt;li&amp;gt;Red&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Green&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Blue&amp;lt;/li&amp;gt;
+&amp;lt;/ol&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果你在项目之间插入空行，那项目的内容会用 &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 包起来，你也可以在一个项目内放上多个段落，只要在它前面缩排 4 个空白或 1 个 tab 。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* A list item.
+With multiple paragraphs.
+
+* Another item in the list.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出 HTML 为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;p&amp;gt;A list item.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;With multiple paragraphs.&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;p&amp;gt;Another item in the list.&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt; ### 链接 ###
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdown 支援两种形式的链接语法： &lt;em&gt;行内&lt;/em&gt; 和 &lt;em&gt;参考&lt;/em&gt; 两种形式，两种都是使用角括号来把文字转成连结。&lt;/p&gt;
+
+&lt;p&gt;行内形式是直接在后面用括号直接接上链接：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is an [example link](http://example.com/).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出 HTML 为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;This is an &amp;lt;a href=&quot;http://example.com/&quot;&amp;gt;
+example link&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;你也可以选择性的加上 title 属性：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is an [example link](http://example.com/ &quot;With a Title&quot;).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出 HTML 为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;This is an &amp;lt;a href=&quot;http://example.com/&quot; title=&quot;With a Title&quot;&amp;gt;
+example link&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;参考形式的链接让你可以为链接定一个名称，之后你可以在文件的其他地方定义该链接的内容：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google][1] than from
+[Yahoo][2] or [MSN][3].
+
+[1]: http://google.com/ &quot;Google&quot;
+[2]: http://search.yahoo.com/ &quot;Yahoo Search&quot;
+[3]: http://search.msn.com/ &quot;MSN Search&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出 HTML 为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;I get 10 times more traffic from &amp;lt;a href=&quot;http://google.com/&quot;
+title=&quot;Google&quot;&amp;gt;Google&amp;lt;/a&amp;gt; than from &amp;lt;a href=&quot;http://search.yahoo.com/&quot;
+title=&quot;Yahoo Search&quot;&amp;gt;Yahoo&amp;lt;/a&amp;gt; or &amp;lt;a href=&quot;http://search.msn.com/&quot;
+title=&quot;MSN Search&quot;&amp;gt;MSN&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;title 属性是选择性的，链接名称可以用字母、数字和空格，但是不分大小写：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I start my morning with a cup of coffee and
+[The New York Times][NY Times].
+
+[ny times]: http://www.nytimes.com/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出 HTML 为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;I start my morning with a cup of coffee and
+&amp;lt;a href=&quot;http://www.nytimes.com/&quot;&amp;gt;The New York Times&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;图片&quot;&gt;图片&lt;/h3&gt;
+
+&lt;p&gt;图片的语法和链接很像。&lt;/p&gt;
+
+&lt;p&gt;行内形式（title 是选择性的）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;![alt text](/path/to/img.jpg &quot;Title&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;参考形式：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;![alt text][id]
+
+[id]: /path/to/img.jpg &quot;Title&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面两种方法都会输出 HTML 为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&quot;/path/to/img.jpg&quot; alt=&quot;alt text&quot; title=&quot;Title&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;代码&quot;&gt;代码&lt;/h3&gt;
+&lt;p&gt;在一般的段落文字中，你可以使用反引号 &lt;code&gt;`&lt;/code&gt; 来标记代码区段，区段内的 &lt;code&gt;&amp;amp;&lt;/code&gt;、&lt;code&gt;&amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;gt;&lt;/code&gt; 都会被自动的转换成 HTML 实体，这项特性让你可以很容易的在代码区段内插入 HTML 码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I strongly recommend against using any `&amp;lt;blink&amp;gt;` tags.
+
+I wish SmartyPants used named entities like `&amp;amp;mdash;`
+instead of decimal-encoded entites like `&amp;amp;#8212;`.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出 HTML 为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;I strongly recommend against using any
+&amp;lt;code&amp;gt;&amp;amp;lt;blink&amp;amp;gt;&amp;lt;/code&amp;gt; tags.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;I wish SmartyPants used named entities like
+&amp;lt;code&amp;gt;&amp;amp;amp;mdash;&amp;lt;/code&amp;gt; instead of decimal-encoded
+entites like &amp;lt;code&amp;gt;&amp;amp;amp;#8212;&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果要建立一个已经格式化好的代码区块，只要每行都缩进 4 个空格或是一个 tab 就可以了，而 &lt;code&gt;&amp;amp;&lt;/code&gt;、&lt;code&gt;&amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;gt;&lt;/code&gt; 也一样会自动转成 HTML 实体。&lt;/p&gt;
+
+&lt;p&gt;Markdown 语法:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;If you want your page to validate under XHTML 1.0 Strict,
+you've got to put paragraph tags in your blockquotes:
+
+&amp;lt;blockquote&amp;gt;
+&amp;lt;p&amp;gt;For example.&amp;lt;/p&amp;gt;
+&amp;lt;/blockquote&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出 HTML 为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;If you want your page to validate under XHTML 1.0 Strict,
+you've got to put paragraph tags in your blockquotes:&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;amp;lt;blockquote&amp;amp;gt;
+&amp;amp;lt;p&amp;amp;gt;For example.&amp;amp;lt;/p&amp;amp;gt;
+&amp;amp;lt;/blockquote&amp;amp;gt;
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+</content>
+ </entry>
+ 
+ 
+</feed>
