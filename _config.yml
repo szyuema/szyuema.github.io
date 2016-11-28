@@ -21,7 +21,6 @@ all_categories: [
 ["lifeother", "生活杂记","/posts/lifeother.html"],
 ["about", "关于","/about.html"]
 ]
-
 paginate: 1
 paginate_path: "posts/page:num"
 timezone: America/Los_Angeles
