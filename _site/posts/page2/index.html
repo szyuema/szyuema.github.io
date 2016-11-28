@@ -146,21 +146,21 @@
 
 <p>###常用的js正则表达式</p>
 
-<pre><code class="language-js">//正整数
-/^[0-9]*[1-9][0-9]*$/;
-//负整数
-/^-[0-9]*[1-9][0-9]*$/;
-//正浮点数
-/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/;   
-//负浮点数
-/^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/;  
-//浮点数
-/^(-?\d+)(\.\d+)?$/;
-//email地址
-/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
-//url地址
-/^[a-zA-z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\S*)?$/;
-或：^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&amp;_~`@[\]\':+!]*([^&lt;&gt;\"\"])*$ 
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">//正整数</span>
+<span class="sr">/^</span><span class="se">[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*$/</span><span class="p">;</span>
+<span class="c1">//负整数</span>
+<span class="sr">/^-</span><span class="se">[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*$/</span><span class="p">;</span>
+<span class="c1">//正浮点数</span>
+<span class="sr">/^</span><span class="se">(([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">\.[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">)</span><span class="sr">|</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">\.[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">|</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">))</span><span class="sr">$/</span><span class="p">;</span>   
+<span class="c1">//负浮点数</span>
+<span class="sr">/^</span><span class="se">(</span><span class="sr">-</span><span class="se">(([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">\.[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">)</span><span class="sr">|</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">\.[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">|</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">)))</span><span class="sr">$/</span><span class="p">;</span>  
+<span class="c1">//浮点数</span>
+<span class="sr">/^</span><span class="se">(</span><span class="sr">-</span><span class="se">?\d</span><span class="sr">+</span><span class="se">)(\.\d</span><span class="sr">+</span><span class="se">)?</span><span class="sr">$/</span><span class="p">;</span>
+<span class="c1">//email地址</span>
+<span class="sr">/^</span><span class="se">[\w</span><span class="sr">-</span><span class="se">]</span><span class="sr">+</span><span class="se">(\.[\w</span><span class="sr">-</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">*@</span><span class="se">[\w</span><span class="sr">-</span><span class="se">]</span><span class="sr">+</span><span class="se">(\.[\w</span><span class="sr">-</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">+$/</span><span class="p">;</span>
+<span class="c1">//url地址</span>
+<span class="sr">/^</span><span class="se">[</span><span class="sr">a-zA-z</span><span class="se">]</span><span class="sr">+:/</span><span class="o">/</span><span class="p">(</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">)</span><span class="o">*</span><span class="p">)(</span><span class="err">\</span><span class="p">.(</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">)</span><span class="o">*</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="err">\</span><span class="p">?</span><span class="err">\</span><span class="nx">S</span><span class="o">*</span><span class="p">)?</span><span class="nx">$</span><span class="o">/</span><span class="p">;</span>
+<span class="err">或：</span><span class="o">^</span><span class="nx">http</span><span class="p">:</span><span class="err">\</span><span class="o">/</span><span class="err">\</span><span class="o">/</span><span class="p">[</span><span class="nx">A</span><span class="o">-</span><span class="nx">Za</span><span class="o">-</span><span class="nx">z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="err">\</span><span class="p">.[</span><span class="nx">A</span><span class="o">-</span><span class="nx">Za</span><span class="o">-</span><span class="nx">z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="err">\</span><span class="o">/=</span><span class="err">\</span><span class="p">?</span><span class="o">%</span><span class="err">\</span><span class="o">-&amp;</span><span class="nx">_</span><span class="o">~</span><span class="err">`@</span><span class="p">[</span><span class="err">\</span><span class="p">]</span><span class="err">\</span><span class="s1">':+!]*([^&lt;&gt;\"\"])*$ 
 //年/月/日（年-月-日、年.月.日）
 /^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/;
 //匹配中文字符
@@ -184,30 +184,31 @@
 //sql 语句
 ^(select|drop|delete|create|update|insert).*$
 //提取信息中的网络链接
-(h|H)(r|R)(e|E)(f|F) *= *('|")?(\w|\\|\/|\.)+('|"| *|&gt;)? 
-//提取信息中的邮件地址
-\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)* 
-//提取信息中的图片链接
-(s|S)(r|R)(c|C) *= *('|")?(\w|\\|\/|\.)+('|"| *|&gt;)? 
-//提取信息中的 IP 地址
-(\d+)\.(\d+)\.(\d+)\.(\d+)
-//取信息中的中国手机号码
-(86)*0*13\d{9} 
-//提取信息中的中国邮政编码
-[1-9]{1}(\d+){5} 
-//提取信息中的浮点数（即小数）
-(-?\d*)\.?\d+ 
-//提取信息中的任何数字
-(-?\d*)(\.\d+)?
-//电话区号
-^0\d{2,3}$
-//腾讯 QQ 号
-^[1-9]*[1-9][0-9]*$ 
-//帐号（字母开头，允许 5-16 字节，允许字母数字下划线）
-^[a-zA-Z][a-zA-Z0-9_]{4,15}$ 
-//中文、英文、数字及下划线
-^[\u4e00-\u9fa5_a-zA-Z0-9]+$
+(h|H)(r|R)(e|E)(f|F) *= *('</span><span class="o">|</span><span class="s2">")?(\w|\\|\/|\.)+('|"</span><span class="o">|</span> <span class="o">*|&gt;</span><span class="p">)?</span> 
+<span class="c1">//提取信息中的邮件地址</span>
+<span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">([</span><span class="o">-+</span><span class="p">.]</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">)</span><span class="o">*</span><span class="err">@\</span><span class="nx">w</span><span class="o">+</span><span class="p">([</span><span class="o">-</span><span class="p">.]</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">)</span><span class="o">*</span><span class="err">\</span><span class="p">.</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">([</span><span class="o">-</span><span class="p">.]</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">)</span><span class="o">*</span> 
+<span class="c1">//提取信息中的图片链接</span>
+<span class="p">(</span><span class="nx">s</span><span class="o">|</span><span class="nx">S</span><span class="p">)(</span><span class="nx">r</span><span class="o">|</span><span class="nx">R</span><span class="p">)(</span><span class="nx">c</span><span class="o">|</span><span class="nx">C</span><span class="p">)</span> <span class="o">*=</span> <span class="o">*</span><span class="p">(</span><span class="s1">'|")?(\w|\\|\/|\.)+('</span><span class="o">|</span><span class="err">"</span><span class="o">|</span> <span class="o">*|&gt;</span><span class="p">)?</span> 
+<span class="c1">//提取信息中的 IP 地址</span>
+<span class="p">(</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">.(</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">.(</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">.(</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">)</span>
+<span class="c1">//取信息中的中国手机号码</span>
+<span class="p">(</span><span class="mi">86</span><span class="p">)</span><span class="o">*</span><span class="mi">0</span><span class="o">*</span><span class="mi">13</span><span class="err">\</span><span class="nx">d</span><span class="p">{</span><span class="mi">9</span><span class="p">}</span> 
+<span class="c1">//提取信息中的中国邮政编码</span>
+<span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">1</span><span class="p">}(</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">){</span><span class="mi">5</span><span class="p">}</span> 
+<span class="c1">//提取信息中的浮点数（即小数）</span>
+<span class="p">(</span><span class="o">-</span><span class="p">?</span><span class="err">\</span><span class="nx">d</span><span class="o">*</span><span class="p">)</span><span class="err">\</span><span class="p">.?</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span> 
+<span class="c1">//提取信息中的任何数字</span>
+<span class="p">(</span><span class="o">-</span><span class="p">?</span><span class="err">\</span><span class="nx">d</span><span class="o">*</span><span class="p">)(</span><span class="err">\</span><span class="p">.</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">)?</span>
+<span class="c1">//电话区号</span>
+<span class="o">^</span><span class="mi">0</span><span class="err">\</span><span class="nx">d</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span><span class="nx">$</span>
+<span class="c1">//腾讯 QQ 号</span>
+<span class="o">^</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">9</span><span class="p">][</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="nx">$</span> 
+<span class="c1">//帐号（字母开头，允许 5-16 字节，允许字母数字下划线）</span>
+<span class="o">^</span><span class="p">[</span><span class="nx">a</span><span class="o">-</span><span class="nx">zA</span><span class="o">-</span><span class="nx">Z</span><span class="p">][</span><span class="nx">a</span><span class="o">-</span><span class="nx">zA</span><span class="o">-</span><span class="nx">Z0</span><span class="o">-</span><span class="mi">9</span><span class="nx">_</span><span class="p">]{</span><span class="mi">4</span><span class="p">,</span><span class="mi">15</span><span class="p">}</span><span class="nx">$</span> 
+<span class="c1">//中文、英文、数字及下划线</span>
+<span class="o">^</span><span class="p">[</span><span class="err">\</span><span class="nx">u4e00</span><span class="o">-</span><span class="err">\</span><span class="nx">u9fa5_a</span><span class="o">-</span><span class="nx">zA</span><span class="o">-</span><span class="nx">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="nx">$</span>
 </code></pre>
+</div>
 
 	<p><h3><a href="/posts/reg.html">阅读全文 &raquo;</a></h3></p>
 <hr>
