@@ -62,7 +62,6 @@ Markdown 语法:
 	> ## This is an H2 in a blockquote
 
 输出 HTML 为：
-
 	<h1>A First Level Header</h1>
 	<h2>A Second Level Header</h2>
 	<p>Now is the time for all good men to come to
