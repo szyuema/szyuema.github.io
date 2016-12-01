@@ -4,7 +4,7 @@
  <title></title>
  <link href="http://https://szyuema.github.io//atom.xml" rel="self"/>
  <link href="http://https://szyuema.github.io/"/>
- <updated>2016-12-01T03:18:09+00:00</updated>
+ <updated>2016-12-01T05:45:20+00:00</updated>
  <author>
    <name>马跃</name>
    <email>402870645@qq.com</email>
@@ -67,7 +67,6 @@
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&quot;presets&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;es2015&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;hr /&gt;
