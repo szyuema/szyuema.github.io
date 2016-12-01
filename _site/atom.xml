@@ -4,7 +4,7 @@
  <title></title>
  <link href="http://https://szyuema.github.io//atom.xml" rel="self"/>
  <link href="http://https://szyuema.github.io/"/>
- <updated>2016-12-01T02:27:27+00:00</updated>
+ <updated>2016-12-01T03:18:09+00:00</updated>
  <author>
    <name>马跃</name>
    <email>402870645@qq.com</email>
@@ -21,21 +21,25 @@
 &lt;h3 id=&quot;1安装依赖&quot;&gt;1.安装依赖&lt;/h3&gt;
 
 &lt;p&gt;安装全局 Gulp&lt;/p&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;npm install -g gulp&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;安装项目中使用的 Gulp&lt;/p&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;npm install –save-dev gulp&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;安装 Gulp 上 Babel 的插件&lt;/p&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;npm install –save-dev gulp-babel&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;安装 Babel 上将 ES6 转换成 ES5 的插件&lt;/p&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;npm install –save-dev babel-preset-es2015&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -43,6 +47,7 @@
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;2-gulp-配置&quot;&gt;2. Gulp 配置&lt;/h3&gt;
+
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gulp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gulp-babel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
