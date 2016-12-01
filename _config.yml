@@ -16,7 +16,7 @@ all_categories: [
 ["vue", "vue学习","/posts/vue.html"],
 ["frame", "框架学习","/posts/frame.html"],
 ["Node", "Node","/posts/Node.html"],
-["git&&github", "git&&github","/posts/git&&github.html"],
+#["git&&github", "git&&github","/posts/git&&github.html"],
 ["read", "读书笔记","/posts/read.html"], 
 ["lifeother", "生活杂记","/posts/lifeother.html"],
 ["about", "关于","/about.html"]
