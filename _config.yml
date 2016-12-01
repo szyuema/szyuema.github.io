@@ -1,5 +1,7 @@
 markdown: kramdown
 rouge: pygments
+kramdown:
+  input: GFM
 permalink: /posts/:title.html
 excerpt_separator: "<!-- more -->"
 
