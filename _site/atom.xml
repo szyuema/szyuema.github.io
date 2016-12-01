@@ -4,7 +4,7 @@
  <title></title>
  <link href="http://https://szyuema.github.io//atom.xml" rel="self"/>
  <link href="http://https://szyuema.github.io/"/>
- <updated>2016-12-01T05:45:20+00:00</updated>
+ <updated>2016-12-01T05:46:15+00:00</updated>
  <author>
    <name>马跃</name>
    <email>402870645@qq.com</email>
@@ -63,8 +63,7 @@
 &lt;h3 id=&quot;3-babel-配置&quot;&gt;3. Babel 配置&lt;/h3&gt;
 
 &lt;p&gt;在项目根路径创建文件 .babelrc。内容为&lt;/p&gt;
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&quot;presets&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;es2015&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
