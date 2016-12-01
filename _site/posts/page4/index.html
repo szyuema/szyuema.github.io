@@ -133,305 +133,82 @@
           <!-- Loop output paged posts -->
 
 <h2>
-  <a href="/posts/markdown-basics.html">
-    markdown 快速入门
+  <a href="/posts/reg.html">
+    常用正则
   </a> 
   <div class="post-date">
 	<span class="glyphicon glyphicon-time"></span>
-	2014-07-10
+	2016-11-28
   </div>
 </h2>
 <hr>
-<p><strong>声明：</strong> 这份文档派生(fork)于<a href="http://markdown.tw/">繁体中文版</a>，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里<a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/basics.md">查看它的源文件</a>。「繁体中文版的原始文件可以<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/basics.md">查看这里</a>」–By @<a href="http://twitter.com/riku">riku</a> / 本项目托管于 <a href="http://gitcafe.com/riku/Markdown-Syntax-CN">GitCafe</a></p>
+<h3 id="常用的js正则表达式">常用的js正则表达式</h3>
 
-<p><strong>注：</strong> 本项目同时也托管于 <a href="https://github.com/riku/Markdown-Syntax-CN">Github</a>上，请通过 fork＋pull request 方式来帮忙改进本项目。</p>
-
-<h1 id="markdown-basics-快速入门--点击查看完整语法说明">Markdown: Basics （快速入门） / (<a href="./markdown-syntax.html">点击查看完整语法说明</a>)</h1>
-
-<h2 id="getting-the-gist-of-markdowns-formatting-syntax">Getting the Gist of Markdown’s Formatting Syntax</h2>
-
-<p>此页提供了 Markdown 的简单概念， <a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md" title="Markdown Syntax">语法说明</a> 页提供了完整详细的文档，说明了每项功能。但是 Markdown 其实很简单就可以上手，此页文档提供了一些范例，并且每个范例都会提供输出的 HTML 结果。</p>
-
-<p>其实直接试试看也是一个很不错的方法， <a href="http://daringfireball.net/projects/markdown/dingus" title="Markdown Dingus">Dingus</a> 是一个网页应用程序，你可以把自已编写的 Markdown 文档转成 XHTML。</p>
-
-<h2 id="段落标题区块代码">段落、标题、区块代码</h2>
-
-<p>一个段落是由一个以上的连接的行句组成，而一个以上的空行则会划分出不同的段落（空行的定义是显示上看起来像是空行，就被视为空行，例如有一行只有空白和 tab，那该行也会被视为空行），一般的段落不需要用空白或换行缩进。</p>
-
-<p>Markdown 支持两种标题的语法，<a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> 和 <a href="http://www.aaronsw.com/2002/atx/">atx</a> 形式。Setext 形式是用底线的形式，利用 <code class="highlighter-rouge">=</code> （最高阶标题）和 <code class="highlighter-rouge">-</code> （第二阶标题），Atx 形式在行首插入 1 到 6 个 <code class="highlighter-rouge">#</code> ，对应到标题 1 到 6 阶。</p>
-
-<p>区块引用则使用 email 形式的 ‘<code class="highlighter-rouge">&gt;</code>’ 角括号。</p>
-
-<p>Markdown 语法:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>A First Level Header
-====================
-A Second Level Header
----------------------
-
-Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.
-
-The quick brown fox jumped over the lazy
-dog's back.
-### Header 3
-
-&gt; This is a blockquote.
-&gt; 
-&gt; This is the second paragraph in the blockquote.
-&gt;
-&gt; ## This is an H2 in a blockquote
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//正整数</span>
+<span class="sr">/^</span><span class="se">[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*$/</span><span class="p">;</span>
+<span class="c1">//负整数</span>
+<span class="sr">/^-</span><span class="se">[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*$/</span><span class="p">;</span>
+<span class="c1">//正浮点数</span>
+<span class="sr">/^</span><span class="se">(([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">\.[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">)</span><span class="sr">|</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">\.[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">|</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">))</span><span class="sr">$/</span><span class="p">;</span>   
+<span class="c1">//负浮点数</span>
+<span class="sr">/^</span><span class="se">(</span><span class="sr">-</span><span class="se">(([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">\.[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">)</span><span class="sr">|</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">\.[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">|</span><span class="se">([</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">[</span><span class="sr">1-9</span><span class="se">][</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">)))</span><span class="sr">$/</span><span class="p">;</span>  
+<span class="c1">//浮点数</span>
+<span class="sr">/^</span><span class="se">(</span><span class="sr">-</span><span class="se">?\d</span><span class="sr">+</span><span class="se">)(\.\d</span><span class="sr">+</span><span class="se">)?</span><span class="sr">$/</span><span class="p">;</span>
+<span class="c1">//email地址</span>
+<span class="sr">/^</span><span class="se">[\w</span><span class="sr">-</span><span class="se">]</span><span class="sr">+</span><span class="se">(\.[\w</span><span class="sr">-</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">*@</span><span class="se">[\w</span><span class="sr">-</span><span class="se">]</span><span class="sr">+</span><span class="se">(\.[\w</span><span class="sr">-</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">+$/</span><span class="p">;</span>
+<span class="c1">//url地址</span>
+<span class="sr">/^</span><span class="se">[</span><span class="sr">a-zA-z</span><span class="se">]</span><span class="sr">+:/</span><span class="o">/</span><span class="p">(</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">)</span><span class="o">*</span><span class="p">)(</span><span class="err">\</span><span class="p">.(</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">)</span><span class="o">*</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="err">\</span><span class="p">?</span><span class="err">\</span><span class="nx">S</span><span class="o">*</span><span class="p">)?</span><span class="nx">$</span><span class="o">/</span><span class="p">;</span>
+<span class="err">或：</span><span class="o">^</span><span class="nx">http</span><span class="p">:</span><span class="err">\</span><span class="o">/</span><span class="err">\</span><span class="o">/</span><span class="p">[</span><span class="nx">A</span><span class="o">-</span><span class="nx">Za</span><span class="o">-</span><span class="nx">z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="err">\</span><span class="p">.[</span><span class="nx">A</span><span class="o">-</span><span class="nx">Za</span><span class="o">-</span><span class="nx">z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="err">\</span><span class="o">/=</span><span class="err">\</span><span class="p">?</span><span class="o">%</span><span class="err">\</span><span class="o">-&amp;</span><span class="nx">_</span><span class="o">~</span><span class="err">`@</span><span class="p">[</span><span class="err">\</span><span class="p">]</span><span class="err">\</span><span class="s1">':+!]*([^&lt;&gt;\"\"])*$ 
+//年/月/日（年-月-日、年.月.日）
+/^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/;
+//匹配中文字符
+/[\u4e00-\u9fa5]/;
+//匹配帐号是否合法(字母开头，允许5-10字节，允许字母数字下划线)
+/^[a-zA-Z][a-zA-Z0-9_]{4,9}$/;
+//匹配空白行的正则表达式
+/\n\s*\r/;
+//匹配中国邮政编码
+/[1-9]\d{5}(?!\d)/;
+//匹配身份证
+/\d{15}|\d{18}/;
+//匹配国内电话号码
+/(\d{3}-|\d{4}-)?(\d{8}|\d{7})?/;
+//匹配IP地址
+/((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/;
+//匹配首尾空白字符的正则表达式
+/^\s*|\s*$/;
+//匹配HTML标记的正则表达式
+&lt; (\S*?)[^&gt;]*&gt;.*?|&lt; .*? /&gt;;
+//sql 语句
+^(select|drop|delete|create|update|insert).*$
+//提取信息中的网络链接
+(h|H)(r|R)(e|E)(f|F) *= *('</span><span class="o">|</span><span class="s2">")?(\w|\\|\/|\.)+('|"</span><span class="o">|</span> <span class="o">*|&gt;</span><span class="p">)?</span> 
+<span class="c1">//提取信息中的邮件地址</span>
+<span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">([</span><span class="o">-+</span><span class="p">.]</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">)</span><span class="o">*</span><span class="err">@\</span><span class="nx">w</span><span class="o">+</span><span class="p">([</span><span class="o">-</span><span class="p">.]</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">)</span><span class="o">*</span><span class="err">\</span><span class="p">.</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">([</span><span class="o">-</span><span class="p">.]</span><span class="err">\</span><span class="nx">w</span><span class="o">+</span><span class="p">)</span><span class="o">*</span> 
+<span class="c1">//提取信息中的图片链接</span>
+<span class="p">(</span><span class="nx">s</span><span class="o">|</span><span class="nx">S</span><span class="p">)(</span><span class="nx">r</span><span class="o">|</span><span class="nx">R</span><span class="p">)(</span><span class="nx">c</span><span class="o">|</span><span class="nx">C</span><span class="p">)</span> <span class="o">*=</span> <span class="o">*</span><span class="p">(</span><span class="s1">'|")?(\w|\\|\/|\.)+('</span><span class="o">|</span><span class="err">"</span><span class="o">|</span> <span class="o">*|&gt;</span><span class="p">)?</span> 
+<span class="c1">//提取信息中的 IP 地址</span>
+<span class="p">(</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">.(</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">.(</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">)</span><span class="err">\</span><span class="p">.(</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">)</span>
+<span class="c1">//取信息中的中国手机号码</span>
+<span class="p">(</span><span class="mi">86</span><span class="p">)</span><span class="o">*</span><span class="mi">0</span><span class="o">*</span><span class="mi">13</span><span class="err">\</span><span class="nx">d</span><span class="p">{</span><span class="mi">9</span><span class="p">}</span> 
+<span class="c1">//提取信息中的中国邮政编码</span>
+<span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">1</span><span class="p">}(</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">){</span><span class="mi">5</span><span class="p">}</span> 
+<span class="c1">//提取信息中的浮点数（即小数）</span>
+<span class="p">(</span><span class="o">-</span><span class="p">?</span><span class="err">\</span><span class="nx">d</span><span class="o">*</span><span class="p">)</span><span class="err">\</span><span class="p">.?</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span> 
+<span class="c1">//提取信息中的任何数字</span>
+<span class="p">(</span><span class="o">-</span><span class="p">?</span><span class="err">\</span><span class="nx">d</span><span class="o">*</span><span class="p">)(</span><span class="err">\</span><span class="p">.</span><span class="err">\</span><span class="nx">d</span><span class="o">+</span><span class="p">)?</span>
+<span class="c1">//电话区号</span>
+<span class="o">^</span><span class="mi">0</span><span class="err">\</span><span class="nx">d</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span><span class="nx">$</span>
+<span class="c1">//腾讯 QQ 号</span>
+<span class="o">^</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">9</span><span class="p">][</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="nx">$</span> 
+<span class="c1">//帐号（字母开头，允许 5-16 字节，允许字母数字下划线）</span>
+<span class="o">^</span><span class="p">[</span><span class="nx">a</span><span class="o">-</span><span class="nx">zA</span><span class="o">-</span><span class="nx">Z</span><span class="p">][</span><span class="nx">a</span><span class="o">-</span><span class="nx">zA</span><span class="o">-</span><span class="nx">Z0</span><span class="o">-</span><span class="mi">9</span><span class="nx">_</span><span class="p">]{</span><span class="mi">4</span><span class="p">,</span><span class="mi">15</span><span class="p">}</span><span class="nx">$</span> 
+<span class="c1">//中文、英文、数字及下划线</span>
+<span class="o">^</span><span class="p">[</span><span class="err">\</span><span class="nx">u4e00</span><span class="o">-</span><span class="err">\</span><span class="nx">u9fa5_a</span><span class="o">-</span><span class="nx">zA</span><span class="o">-</span><span class="nx">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="nx">$</span>
 </code></pre>
 </div>
 
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;h1&gt;A First Level Header&lt;/h1&gt;
-&lt;h2&gt;A Second Level Header&lt;/h2&gt;
-&lt;p&gt;Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.&lt;/p&gt;
-&lt;p&gt;The quick brown fox jumped over the lazy
-dog's back.&lt;/p&gt;
-&lt;h3&gt;Header 3&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a blockquote.&lt;/p&gt;
-&lt;p&gt;This is the second paragraph in the blockquote.&lt;/p&gt;
-&lt;h2&gt;This is an H2 in a blockquote&lt;/h2&gt;
-&lt;/blockquote&gt;
-</code></pre>
-</div>
-
-<h3 id="修辞和强调">修辞和强调</h3>
-
-<p>Markdown 使用星号和底线来标记需要强调的区段。</p>
-
-<p>Markdown 语法:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>Some of these words *are emphasized*.
-Some of these words _are emphasized also_.
-Use two asterisks for **strong emphasis**.
-Or, if you prefer, __use two underscores instead__.
-</code></pre>
-</div>
-
-<p>输出 HTML 为:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;Some of these words &lt;em&gt;are emphasized&lt;/em&gt;.
-Some of these words &lt;em&gt;are emphasized also&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Use two asterisks for &lt;strong&gt;strong emphasis&lt;/strong&gt;.
-Or, if you prefer, &lt;strong&gt;use two underscores instead&lt;/strong&gt;.&lt;/p&gt;
-</code></pre>
-</div>
-
-<h2 id="列表">列表</h2>
-
-<p>无序列表使用星号、加号和减号来做为列表的项目标记，这些符号是都可以使用的，使用星号：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>* Candy.
-* Gum.
-* Booze.
-</code></pre>
-</div>
-
-<p>加号：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>+ Candy.
-+ Gum.
-+ Booze.
-</code></pre>
-</div>
-
-<p>和减号</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>- Candy.
-- Gum.
-- Booze.
-</code></pre>
-</div>
-
-<p>都会输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;ul&gt;
-&lt;li&gt;Candy.&lt;/li&gt;
-&lt;li&gt;Gum.&lt;/li&gt;
-&lt;li&gt;Booze.&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-</div>
-
-<p>有序的列表则是使用一般的数字接着一个英文句点作为项目标记：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1. Red
-2. Green
-3. Blue
-</code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;ol&gt;
-&lt;li&gt;Red&lt;/li&gt;
-&lt;li&gt;Green&lt;/li&gt;
-&lt;li&gt;Blue&lt;/li&gt;
-&lt;/ol&gt;
-</code></pre>
-</div>
-
-<p>如果你在项目之间插入空行，那项目的内容会用 <code class="highlighter-rouge">&lt;p&gt;</code> 包起来，你也可以在一个项目内放上多个段落，只要在它前面缩排 4 个空白或 1 个 tab 。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>* A list item.
-With multiple paragraphs.
-
-* Another item in the list.
-</code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;A list item.&lt;/p&gt;
-&lt;p&gt;With multiple paragraphs.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Another item in the list.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt; ### 链接 ###
-</code></pre>
-</div>
-
-<p>Markdown 支援两种形式的链接语法： <em>行内</em> 和 <em>参考</em> 两种形式，两种都是使用角括号来把文字转成连结。</p>
-
-<p>行内形式是直接在后面用括号直接接上链接：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>This is an [example link](http://example.com/).
-</code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;This is an &lt;a href="http://example.com/"&gt;
-example link&lt;/a&gt;.&lt;/p&gt;
-</code></pre>
-</div>
-
-<p>你也可以选择性的加上 title 属性：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>This is an [example link](http://example.com/ "With a Title").
-</code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;This is an &lt;a href="http://example.com/" title="With a Title"&gt;
-example link&lt;/a&gt;.&lt;/p&gt;
-</code></pre>
-</div>
-
-<p>参考形式的链接让你可以为链接定一个名称，之后你可以在文件的其他地方定义该链接的内容：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>I get 10 times more traffic from [Google][1] than from
-[Yahoo][2] or [MSN][3].
-
-[1]: http://google.com/ "Google"
-[2]: http://search.yahoo.com/ "Yahoo Search"
-[3]: http://search.msn.com/ "MSN Search"
-</code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;I get 10 times more traffic from &lt;a href="http://google.com/"
-title="Google"&gt;Google&lt;/a&gt; than from &lt;a href="http://search.yahoo.com/"
-title="Yahoo Search"&gt;Yahoo&lt;/a&gt; or &lt;a href="http://search.msn.com/"
-title="MSN Search"&gt;MSN&lt;/a&gt;.&lt;/p&gt;
-</code></pre>
-</div>
-
-<p>title 属性是选择性的，链接名称可以用字母、数字和空格，但是不分大小写：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>I start my morning with a cup of coffee and
-[The New York Times][NY Times].
-
-[ny times]: http://www.nytimes.com/
-</code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;I start my morning with a cup of coffee and
-&lt;a href="http://www.nytimes.com/"&gt;The New York Times&lt;/a&gt;.&lt;/p&gt;
-</code></pre>
-</div>
-
-<h3 id="图片">图片</h3>
-
-<p>图片的语法和链接很像。</p>
-
-<p>行内形式（title 是选择性的）：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>![alt text](/path/to/img.jpg "Title")
-</code></pre>
-</div>
-
-<p>参考形式：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>![alt text][id]
-
-[id]: /path/to/img.jpg "Title"
-</code></pre>
-</div>
-
-<p>上面两种方法都会输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;img src="/path/to/img.jpg" alt="alt text" title="Title" /&gt;
-</code></pre>
-</div>
-
-<h3 id="代码">代码</h3>
-<p>在一般的段落文字中，你可以使用反引号 <code class="highlighter-rouge">`</code> 来标记代码区段，区段内的 <code class="highlighter-rouge">&amp;</code>、<code class="highlighter-rouge">&lt;</code> 和 <code class="highlighter-rouge">&gt;</code> 都会被自动的转换成 HTML 实体，这项特性让你可以很容易的在代码区段内插入 HTML 码：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>I strongly recommend against using any `&lt;blink&gt;` tags.
-
-I wish SmartyPants used named entities like `&amp;mdash;`
-instead of decimal-encoded entites like `&amp;#8212;`.
-</code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;I strongly recommend against using any
-&lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
-&lt;p&gt;I wish SmartyPants used named entities like
-&lt;code&gt;&amp;amp;mdash;&lt;/code&gt; instead of decimal-encoded
-entites like &lt;code&gt;&amp;amp;#8212;&lt;/code&gt;.&lt;/p&gt;
-</code></pre>
-</div>
-
-<p>如果要建立一个已经格式化好的代码区块，只要每行都缩进 4 个空格或是一个 tab 就可以了，而 <code class="highlighter-rouge">&amp;</code>、<code class="highlighter-rouge">&lt;</code> 和 <code class="highlighter-rouge">&gt;</code> 也一样会自动转成 HTML 实体。</p>
-
-<p>Markdown 语法:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>If you want your page to validate under XHTML 1.0 Strict,
-you've got to put paragraph tags in your blockquotes:
-
-&lt;blockquote&gt;
-&lt;p&gt;For example.&lt;/p&gt;
-&lt;/blockquote&gt;
-</code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;If you want your page to validate under XHTML 1.0 Strict,
-you've got to put paragraph tags in your blockquotes:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;blockquote&amp;gt;
-&amp;lt;p&amp;gt;For example.&amp;lt;/p&amp;gt;
-&amp;lt;/blockquote&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
-</div>
-
-
-	<p><h3><a href="/posts/markdown-basics.html">阅读全文 &raquo;</a></h3></p>
+	<p><h3><a href="/posts/reg.html">阅读全文 &raquo;</a></h3></p>
 <hr>
 
 
@@ -444,6 +221,12 @@ you've got to put paragraph tags in your blockquotes:&lt;/p&gt;
     </a>
   </li>
     
+  <li class="next">
+    <a href="/posts/page5/index.html">
+      下一页 &rarr;
+    </a>
+  </li>
+  
 </ul>
         </div>
         <!-- Blog Sidebar Widgets Column -->
@@ -463,8 +246,8 @@ you've got to put paragraph tags in your blockquotes:&lt;/p&gt;
                     </a>
                   </li>
                   <li>
-                    <a href="/posts/Vue.html">
-                      Vue
+                    <a href="/posts/vue.html">
+                      vue
                     </a>
                   </li>
                   <li>
@@ -516,6 +299,18 @@ you've got to put paragraph tags in your blockquotes:&lt;/p&gt;
 			<div class="row">
                             <div class="col-lg-12">
                 <ul class="list-unstyled">
+				
+                  <li>
+                    <a href="/posts/gulp-es6Tes5.html">
+                      Gulp下es6转es5
+                    </a>
+                  </li>
+				
+                  <li>
+                    <a href="/posts/test.html">
+                      markdown demo
+                    </a>
+                  </li>
 				
                   <li>
                     <a href="/posts/vue-means.html">

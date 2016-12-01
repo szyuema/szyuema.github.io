@@ -3,6 +3,22 @@
 	"data" : [
 	 
 	{
+		"title" : "Gulp下es6转es5 - Node_gulp_es6_es5",
+		"url" : "/posts/gulp-es6Tes5.html"
+	}
+	
+	,
+	
+    
+	{
+		"title" : "markdown demo - read_markdown",
+		"url" : "/posts/test.html"
+	}
+	
+	,
+	
+    
+	{
 		"title" : "vue学习资料 - vue_js_资料",
 		"url" : "/posts/vue-means.html"
 	}

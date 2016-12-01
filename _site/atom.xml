@@ -4,12 +4,118 @@
  <title></title>
  <link href="http://https://szyuema.github.io//atom.xml" rel="self"/>
  <link href="http://https://szyuema.github.io/"/>
- <updated>2016-11-28T07:56:46+00:00</updated>
+ <updated>2016-12-01T02:27:27+00:00</updated>
  <author>
    <name>马跃</name>
    <email>402870645@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Gulp下es6转es5</title>
+   <link href="http://https://szyuema.github.io//posts/gulp-es6Tes5.html"/>
+   <updated>2016-12-01T00:00:00+00:00</updated>
+   <id>/posts/gulp-es6Tes5</id>
+   <content type="html">&lt;h2 id=&quot;es6转换es5&quot;&gt;es6转换es5&lt;/h2&gt;
+
+&lt;h3 id=&quot;1安装依赖&quot;&gt;1.安装依赖&lt;/h3&gt;
+
+&lt;p&gt;安装全局 Gulp&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;npm install -g gulp&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;安装项目中使用的 Gulp&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;npm install –save-dev gulp&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;安装 Gulp 上 Babel 的插件&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;npm install –save-dev gulp-babel&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;安装 Babel 上将 ES6 转换成 ES5 的插件&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;npm install –save-dev babel-preset-es2015&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;2-gulp-配置&quot;&gt;2. Gulp 配置&lt;/h3&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gulp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gulp-babel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;***&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/**/*.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// ES6 源码存放的路径&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;babel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;dist&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//转换成 ES5 存放的路径&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;3-babel-配置&quot;&gt;3. Babel 配置&lt;/h3&gt;
+
+&lt;p&gt;在项目根路径创建文件 .babelrc。内容为&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;presets&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;es2015&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;4转换&quot;&gt;4.转换&lt;/h3&gt;
+
+&lt;p&gt;命令行中执行&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>markdown demo</title>
+   <link href="http://https://szyuema.github.io//posts/test.html"/>
+   <updated>2016-11-30T00:00:00+00:00</updated>
+   <id>/posts/test</id>
+   <content type="html">&lt;h1 id=&quot;这是-h1&quot;&gt;这是 H1&lt;/h1&gt;
+
+&lt;h2 id=&quot;这是-h2&quot;&gt;这是 H2&lt;/h2&gt;
+
+&lt;h6 id=&quot;这是-h6&quot;&gt;这是 H6&lt;/h6&gt;
+
+&lt;h1 id=&quot;this-is-an-h1&quot;&gt;This is an H1&lt;/h1&gt;
+
+&lt;h2 id=&quot;this-is-an-h2&quot;&gt;This is an H2&lt;/h2&gt;
+
+&lt;p&gt;©
+4 &amp;lt; 5&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;这是一个标题&quot;&gt;这是一个标题。&lt;/h2&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;这是第一行列表项。&lt;/li&gt;
+    &lt;li&gt;这是第二行列表项。&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;给出一些例子代码：&lt;/p&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;return shell_exec(&quot;echo $input | $markdown_script&quot;);
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&quot;http://google.com/&quot; title=&quot;Google&quot;&gt;Google&lt;/a&gt; than from
+&lt;a href=&quot;http://search.yahoo.com/&quot; title=&quot;Yahoo Search&quot;&gt;Yahoo&lt;/a&gt; or &lt;a href=&quot;http://search.msn.com/&quot; title=&quot;MSN Search&quot;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>vue学习资料</title>
@@ -343,11 +449,9 @@
    <link href="http://https://szyuema.github.io//posts/reg.html"/>
    <updated>2016-11-28T00:00:00+00:00</updated>
    <id>/posts/reg</id>
-   <content type="html">&lt;h3 id=&quot;以下是常用的代码收集没有任何技术含量只是填坑的积累转载请注明出处谢谢&quot;&gt;以下是常用的代码收集，没有任何技术含量，只是填坑的积累。转载请注明出处，谢谢。&lt;/h3&gt;
+   <content type="html">&lt;h3 id=&quot;常用的js正则表达式&quot;&gt;常用的js正则表达式&lt;/h3&gt;
 
-&lt;p&gt;###常用的js正则表达式&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//正整数&lt;/span&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//正整数&lt;/span&gt;
 &lt;span class=&quot;sr&quot;&gt;/^&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;0-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;1-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;0-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;*$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;//负整数&lt;/span&gt;
 &lt;span class=&quot;sr&quot;&gt;/^-&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;0-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;1-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;0-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;*$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -428,18 +532,21 @@
     &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/1357118/event-preventdefault-vs-return-false&quot;&gt;return false&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.75team.com/archives/201&quot;&gt;return false&lt;/a&gt;
-    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// event.preventDefault()会阻挡预设要发生的事件.&lt;/span&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.75team.com/archives/201&quot;&gt;return false&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// event.preventDefault()会阻挡预设要发生的事件.&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// event.stopPropagation()会阻挡发生冒泡事件.&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// 而return false则是前面两者的事情他都会做：&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// 他会做event.preventDefault();&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// 他会做event.stopPropagation();&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// 停止callback function的执行并且立即return回来&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
   &lt;li&gt;防止被Iframe嵌套
-    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;about&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;blank&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -448,7 +555,7 @@
   &lt;li&gt;
     &lt;p&gt;两种图片lazy加载的方式
 第一个By JS中级交流群 成都-猎巫 第二个By 上海-zenki
-```javascript
+``` javascript
 // @description 准备为图片预加载使用的插件
 // 使用的图片容器css类名为lazy-load-wrap
 // 图片真实地址为data-lazy-src
@@ -1314,6 +1421,21 @@ function getJsDir (src) {
 &lt;h1 id=&quot;markdown-basics-快速入门--点击查看完整语法说明&quot;&gt;Markdown: Basics （快速入门） / (&lt;a href=&quot;./markdown-syntax.html&quot;&gt;点击查看完整语法说明&lt;/a&gt;)&lt;/h1&gt;
 
 &lt;h2 id=&quot;getting-the-gist-of-markdowns-formatting-syntax&quot;&gt;Getting the Gist of Markdown’s Formatting Syntax&lt;/h2&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#markdown-basics-快速入门--点击查看完整语法说明&quot; id=&quot;markdown-toc-markdown-basics-快速入门--点击查看完整语法说明&quot;&gt;Markdown: Basics （快速入门） / (&lt;a href=&quot;./markdown-syntax.html&quot;&gt;点击查看完整语法说明&lt;/a&gt;)&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#getting-the-gist-of-markdowns-formatting-syntax&quot; id=&quot;markdown-toc-getting-the-gist-of-markdowns-formatting-syntax&quot;&gt;Getting the Gist of Markdown’s Formatting Syntax&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#段落标题区块代码&quot; id=&quot;markdown-toc-段落标题区块代码&quot;&gt;段落、标题、区块代码&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#修辞和强调&quot; id=&quot;markdown-toc-修辞和强调&quot;&gt;修辞和强调&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#列表&quot; id=&quot;markdown-toc-列表&quot;&gt;列表&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#图片&quot; id=&quot;markdown-toc-图片&quot;&gt;图片&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#代码&quot; id=&quot;markdown-toc-代码&quot;&gt;代码&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;此页提供了 Markdown 的简单概念， &lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md&quot; title=&quot;Markdown Syntax&quot;&gt;语法说明&lt;/a&gt; 页提供了完整详细的文档，说明了每项功能。但是 Markdown 其实很简单就可以上手，此页文档提供了一些范例，并且每个范例都会提供输出的 HTML 结果。&lt;/p&gt;
 
@@ -1350,23 +1472,20 @@ dog's back.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;输出 HTML 为：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;h1&amp;gt;A First Level Header&amp;lt;/h1&amp;gt;
-&amp;lt;h2&amp;gt;A Second Level Header&amp;lt;/h2&amp;gt;
-&amp;lt;p&amp;gt;Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;The quick brown fox jumped over the lazy
-dog's back.&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Header 3&amp;lt;/h3&amp;gt;
-&amp;lt;blockquote&amp;gt;
-&amp;lt;p&amp;gt;This is a blockquote.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;This is the second paragraph in the blockquote.&amp;lt;/p&amp;gt;
-&amp;lt;h2&amp;gt;This is an H2 in a blockquote&amp;lt;/h2&amp;gt;
-&amp;lt;/blockquote&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;输出 HTML 为：
+	&amp;lt;h1&amp;gt;A First Level Header&amp;lt;/h1&amp;gt;
+	&amp;lt;h2&amp;gt;A Second Level Header&amp;lt;/h2&amp;gt;
+	&amp;lt;p&amp;gt;Now is the time for all good men to come to
+	the aid of their country. This is just a
+	regular paragraph.&amp;lt;/p&amp;gt;
+	&amp;lt;p&amp;gt;The quick brown fox jumped over the lazy
+	dog’s back.&amp;lt;/p&amp;gt;
+	&amp;lt;h3&amp;gt;Header 3&amp;lt;/h3&amp;gt;
+	&amp;lt;blockquote&amp;gt;
+	&amp;lt;p&amp;gt;This is a blockquote.&amp;lt;/p&amp;gt;
+	&amp;lt;p&amp;gt;This is the second paragraph in the blockquote.&amp;lt;/p&amp;gt;
+	&amp;lt;h2&amp;gt;This is an H2 in a blockquote&amp;lt;/h2&amp;gt;
+	&amp;lt;/blockquote&amp;gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;修辞和强调&quot;&gt;修辞和强调&lt;/h3&gt;
 
