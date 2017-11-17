@@ -127,80 +127,74 @@
           <!-- Loop output paged posts -->
 
 <h2>
-  <a href="/posts/gulp-es6Tes5.html">
-    Gulp下es6转es5
+  <a href="/posts/rightcode.html">
+    消除魔术字符串
   </a> 
   <div class="post-date">
 	<span class="glyphicon glyphicon-time"></span>
-	2016-12-01
+	2016-12-16
   </div>
 </h2>
 <hr>
-<h2 id="es6转换es5">es6转换es5</h2>
-
-<h3 id="1安装依赖">1.安装依赖</h3>
-
-<p>安装全局 Gulp</p>
-
+<p>魔术字符串实例</p>
 <blockquote>
-  <p>npm install -g gulp</p>
+  <p>魔术字符串指的是，在代码之中多次出现、与代码形成强耦合的某一个具体的字符串或者数值。
+风格良好的代码，应该尽量消除魔术字符串，该由含义清晰的变量代替。</p>
 </blockquote>
 
-<p>安装项目中使用的 Gulp</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getArea</span><span class="p">(</span><span class="nx">shape</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-<blockquote>
-  <p>npm install –save-dev gulp</p>
-</blockquote>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">shape</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s1">'Triangle'</span><span class="err">:</span> <span class="c1">// 魔术字符串</span>
+      <span class="nx">area</span> <span class="o">=</span> <span class="p">.</span><span class="mi">5</span> <span class="o">*</span> <span class="nx">options</span><span class="p">.</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">options</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="cm">/* ... more code ... */</span>
+  <span class="p">}</span>
 
-<p>安装 Gulp 上 Babel 的插件</p>
-
-<blockquote>
-  <p>npm install –save-dev gulp-babel</p>
-</blockquote>
-
-<p>安装 Babel 上将 ES6 转换成 ES5 的插件</p>
-
-<blockquote>
-  <p>npm install –save-dev babel-preset-es2015</p>
-</blockquote>
-
-<hr />
-
-<h3 id="2-gulp-配置">2. Gulp 配置</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"gulp"</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">babel</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"gulp-babel"</span><span class="p">);</span>
-
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"***"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s2">"src/**/*.js"</span><span class="p">)</span><span class="c1">// ES6 源码存放的路径</span>
-    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">babel</span><span class="p">())</span> 
-    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s2">"dist"</span><span class="p">));</span> <span class="c1">//转换成 ES5 存放的路径</span>
-<span class="p">});</span>
-</code></pre>
-</div>
-<hr />
-
-<h3 id="3-babel-配置">3. Babel 配置</h3>
-
-<p>在项目根路径创建文件 .babelrc。内容为</p>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s2">"presets"</span><span class="err">:</span> <span class="p">[</span><span class="s2">"es2015"</span><span class="p">]</span>
+  <span class="k">return</span> <span class="nx">area</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-<hr />
 
-<h3 id="4转换">4.转换</h3>
-
-<p>命令行中执行</p>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span> <span class="o">***</span>
-
+<span class="nx">getArea</span><span class="p">(</span><span class="s1">'Triangle'</span><span class="p">,</span> <span class="p">{</span> <span class="na">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">100</span> <span class="p">});</span> <span class="c1">// 魔术字符串</span>
 </code></pre>
 </div>
 
-	<p><h3><a href="/posts/gulp-es6Tes5.html">阅读全文 &raquo;</a></h3></p>
+<blockquote>
+  <p>上面代码中，字符串“Triangle”就是一个魔术字符串。它多次出现，与代码形成“强耦合”，不利于将来的修改和维护。</p>
+</blockquote>
+
+<blockquote>
+  <p>常用的消除魔术字符串的方法，就是把它写成一个变量。</p>
+</blockquote>
+
+<p>改进</p>
+
+<blockquote>
+  <p>我们把“Triangle”写成shapeType对象的triangle属性，这样就消除了强耦合。</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">shapeType</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">triangle</span><span class="p">:</span> <span class="s1">'Triangle'</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">getArea</span><span class="p">(</span><span class="nx">shape</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">shape</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nx">shapeType</span><span class="p">.</span><span class="nx">triangle</span><span class="err">:</span>
+      <span class="nx">area</span> <span class="o">=</span> <span class="p">.</span><span class="mi">5</span> <span class="o">*</span> <span class="nx">options</span><span class="p">.</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">options</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">area</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">getArea</span><span class="p">(</span><span class="nx">shapeType</span><span class="p">.</span><span class="nx">triangle</span><span class="p">,</span> <span class="p">{</span> <span class="na">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">100</span> <span class="p">});</span>
+
+</code></pre>
+</div>
+
+
+	<p><h3><a href="/posts/rightcode.html">阅读全文 &raquo;</a></h3></p>
 <hr>
 
 
@@ -285,6 +279,12 @@
 			<div class="row">
                             <div class="col-lg-12">
                 <ul class="list-unstyled">
+				
+                  <li>
+                    <a href="/posts/rightcode.html">
+                      消除魔术字符串
+                    </a>
+                  </li>
 				
                   <li>
                     <a href="/posts/gulp-es6Tes5.html">

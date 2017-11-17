@@ -4,8 +4,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content=" - 马跃个人博客 - 作者:马跃"/>
-    <title>栏目：JS - 马跃个人博客</title>
+    <meta name="description" content="消除魔术字符串 - 马跃个人博客 - 作者:马跃"/> 
+	<meta name="keywords" content="JS"/>
+    <title>消除魔术字符串 - 马跃个人博客</title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Custom CSS -->
@@ -27,6 +28,7 @@
   </head>
   
   <body>
+   
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
@@ -104,36 +106,107 @@
       <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-			<!-- Navi -->
-			<a href="/">首页</a>&nbsp;>&nbsp;<a href="/posts/JS.html">JS</a>&nbsp;>&nbsp;列表
-			<!-- List -->
-			<ul class="list-unstyled">
-			
-			  
-			  
-				
-				<h2>2016</h2> 
-			  
-			  <li>
-				<h4><span>2016-12-16</span>&raquo;
-				<a href="/posts/rightcode.html" title="消除魔术字符串">消除魔术字符串</a></h4>
-			  </li> 
-			
-			  
-			  
-			  <li>
-				<h4><span>2016-11-28</span>&raquo;
-				<a href="/posts/reg.html" title="常用正则">常用正则</a></h4>
-			  </li> 
-			
-			  
-			  
-			  <li>
-				<h4><span>2016-11-28</span>&raquo;
-				<a href="/posts/jsjl.html" title="js积累">js积累</a></h4>
-			  </li> 
-			
-			</ul>
+          <!-- Navi -->
+<a href="/">首页</a>&nbsp;>&nbsp;<a href="/posts/JS.html">JS</a>&nbsp;>&nbsp;正文
+<!-- Title -->
+<h2>消除魔术字符串</h2>
+<b>标签：</b><a href="/tags.html#JS"><i>JS</i></a>
+<div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2016-12-16
+</div>
+<br/>
+<hr>
+<!-- adsense_468x60 -->
+<div style="text-align:center;margin-top:15px;">
+	 <!-- 请修改_includes/adsense_468x60.html添加广告代码。 --> 
+</div>
+<br/>
+
+<!-- content -->
+<div style="text-indent:2em;">
+<p>魔术字符串实例</p>
+<blockquote>
+  <p>魔术字符串指的是，在代码之中多次出现、与代码形成强耦合的某一个具体的字符串或者数值。
+风格良好的代码，应该尽量消除魔术字符串，该由含义清晰的变量代替。</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getArea</span><span class="p">(</span><span class="nx">shape</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">shape</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s1">'Triangle'</span><span class="err">:</span> <span class="c1">// 魔术字符串</span>
+      <span class="nx">area</span> <span class="o">=</span> <span class="p">.</span><span class="mi">5</span> <span class="o">*</span> <span class="nx">options</span><span class="p">.</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">options</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="cm">/* ... more code ... */</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">area</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">getArea</span><span class="p">(</span><span class="s1">'Triangle'</span><span class="p">,</span> <span class="p">{</span> <span class="na">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">100</span> <span class="p">});</span> <span class="c1">// 魔术字符串</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>上面代码中，字符串“Triangle”就是一个魔术字符串。它多次出现，与代码形成“强耦合”，不利于将来的修改和维护。</p>
+</blockquote>
+
+<blockquote>
+  <p>常用的消除魔术字符串的方法，就是把它写成一个变量。</p>
+</blockquote>
+
+<p>改进</p>
+
+<blockquote>
+  <p>我们把“Triangle”写成shapeType对象的triangle属性，这样就消除了强耦合。</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">shapeType</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">triangle</span><span class="p">:</span> <span class="s1">'Triangle'</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">getArea</span><span class="p">(</span><span class="nx">shape</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">shape</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nx">shapeType</span><span class="p">.</span><span class="nx">triangle</span><span class="err">:</span>
+      <span class="nx">area</span> <span class="o">=</span> <span class="p">.</span><span class="mi">5</span> <span class="o">*</span> <span class="nx">options</span><span class="p">.</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">options</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">area</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">getArea</span><span class="p">(</span><span class="nx">shapeType</span><span class="p">.</span><span class="nx">triangle</span><span class="p">,</span> <span class="p">{</span> <span class="na">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">100</span> <span class="p">});</span>
+
+</code></pre>
+</div>
+
+
+</div>
+
+<br/>
+<b>原创文章，转载请注明出处！</b>
+<br/>
+<b>本文链接：</b><a href="https://szyuema.github.io//posts/rightcode.html" title="">https://szyuema.github.io//posts/rightcode.html</a>
+
+<!-- next and previous -->
+<div style="margin-top:15px; margin-bottom:10px">
+  
+  <span class="next">
+    上篇：
+    <a href="/posts/gulp-es6Tes5.html">
+      Gulp下es6转es5
+    </a>
+  </span>
+   
+  
+</div>
+<hr>
+<!-- Blog Comments -->
+<div class="media">
+  <!-- 请修改_includes/comment.html添加评论代码。 --> 
+</div>
         </div>
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
@@ -275,7 +348,7 @@
         <!-- /.row -->
       </footer>
     </div>
-     <div >
+ <div >
             <div class="cb-search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
       opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
     <input type="text" class="form-control cb-search-content" id="cb-search-content" style="position: fixed; top: 60px" placeholder="文章标题 日期 标签" >

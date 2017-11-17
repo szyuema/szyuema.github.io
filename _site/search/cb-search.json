@@ -3,6 +3,14 @@
 	"data" : [
 	 
 	{
+		"title" : "消除魔术字符串 - JS",
+		"url" : "/posts/rightcode.html"
+	}
+	
+	,
+	
+    
+	{
 		"title" : "Gulp下es6转es5 - Node_gulp_es6_es5",
 		"url" : "/posts/gulp-es6Tes5.html"
 	}

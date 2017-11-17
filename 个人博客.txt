@@ -1,0 +1,5 @@
+http://playingfingers.com/2016/03/26/build-a-blog/
+
+ jekyll serve
+
+http://localhost:4000/ 

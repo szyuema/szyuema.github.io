@@ -127,317 +127,901 @@
           <!-- Loop output paged posts -->
 
 <h2>
-  <a href="/posts/markdown-basics.html">
-    markdown 快速入门
+  <a href="/posts/jsjl.html">
+    js积累
   </a> 
   <div class="post-date">
 	<span class="glyphicon glyphicon-time"></span>
-	2014-07-10
+	2016-11-28
   </div>
 </h2>
 <hr>
-<p><strong>声明：</strong> 这份文档派生(fork)于<a href="http://markdown.tw/">繁体中文版</a>，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里<a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/basics.md">查看它的源文件</a>。「繁体中文版的原始文件可以<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/basics.md">查看这里</a>」–By @<a href="http://twitter.com/riku">riku</a> / 本项目托管于 <a href="http://gitcafe.com/riku/Markdown-Syntax-CN">GitCafe</a></p>
+<h3 id="以下是常用的代码收集没有任何技术含量只是填坑的积累转载请注明出处谢谢">以下是常用的代码收集，没有任何技术含量，只是填坑的积累。转载请注明出处，谢谢。</h3>
 
-<p><strong>注：</strong> 本项目同时也托管于 <a href="https://github.com/riku/Markdown-Syntax-CN">Github</a>上，请通过 fork＋pull request 方式来帮忙改进本项目。</p>
+<h4 id="1-pc---js">1. PC - js</h4>
+<ul>
+  <li>返回指定范围的随机数(m-n之间)的公式
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="nx">m</span><span class="p">)</span><span class="o">+</span><span class="nx">m</span>
+</code></pre>
+    </div>
+  </li>
+  <li><a href="http://stackoverflow.com/questions/1357118/event-preventdefault-vs-return-false">return false</a></li>
+  <li><a href="http://www.75team.com/archives/201">return false</a></li>
+</ul>
 
-<h1 id="markdown-basics-快速入门--点击查看完整语法说明">Markdown: Basics （快速入门） / (<a href="./markdown-syntax.html">点击查看完整语法说明</a>)</h1>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// event.preventDefault()会阻挡预设要发生的事件.</span>
+<span class="c1">// event.stopPropagation()会阻挡发生冒泡事件.</span>
+<span class="c1">// 而return false则是前面两者的事情他都会做：</span>
+<span class="c1">// 他会做event.preventDefault();</span>
+<span class="c1">// 他会做event.stopPropagation();</span>
+<span class="c1">// 停止callback function的执行并且立即return回来</span>
+</code></pre>
+</div>
 
-<h2 id="getting-the-gist-of-markdowns-formatting-syntax">Getting the Gist of Markdown’s Formatting Syntax</h2>
-<ul id="markdown-toc">
-  <li><a href="#markdown-basics-快速入门--点击查看完整语法说明" id="markdown-toc-markdown-basics-快速入门--点击查看完整语法说明">Markdown: Basics （快速入门） / (<a href="./markdown-syntax.html">点击查看完整语法说明</a>)</a>    <ul>
-      <li><a href="#getting-the-gist-of-markdowns-formatting-syntax" id="markdown-toc-getting-the-gist-of-markdowns-formatting-syntax">Getting the Gist of Markdown’s Formatting Syntax</a></li>
-      <li><a href="#段落标题区块代码" id="markdown-toc-段落标题区块代码">段落、标题、区块代码</a>        <ul>
-          <li><a href="#修辞和强调" id="markdown-toc-修辞和强调">修辞和强调</a></li>
-        </ul>
-      </li>
-      <li><a href="#列表" id="markdown-toc-列表">列表</a>        <ul>
-          <li><a href="#图片" id="markdown-toc-图片">图片</a></li>
-          <li><a href="#代码" id="markdown-toc-代码">代码</a></li>
-        </ul>
-      </li>
-    </ul>
+<ul>
+  <li>防止被Iframe嵌套
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nx">top</span> <span class="o">!=</span> <span class="nx">self</span><span class="p">){</span>
+  <span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="err">”</span><span class="nx">about</span><span class="err">:</span><span class="nx">blank</span><span class="err">”</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>两种图片lazy加载的方式
+第一个By JS中级交流群 成都-猎巫 第二个By 上海-zenki
+``` javascript
+// @description 准备为图片预加载使用的插件
+// 使用的图片容器css类名为lazy-load-wrap
+// 图片真实地址为data-lazy-src
+// 当lazy-load-wrap容器进入视口，则开始替换容器内所有需要延迟加载的图片路径，并更改容器的加载状态
+//第一种方法
+$.fn.compassLazyLoad=function(){
+  var _HEIGHT=window.innerHeight,
+  _lazyLoadWrap=$(‘.lazy-load-wrap’);</p>
+
+    <p>var methods={
+      setOffsetTop:function(){
+          $.each(_lazyLoadWrap,function(i,n){
+              $(n).attr({
+                  ‘top’:n.offsetTop-_HEIGHT,
+                  ‘status’:’wait’
+              });
+          })
+      },
+      isShow:function(){
+          var _scrollTop=$(window).scrollTop;
+          //利用image容器判断是否进入视口，而非image本身
+          $.each(_lazyLoadWrap,function(){
+              var _that=$(this);
+              if (_that.attr(‘status’)===’done’) {
+                  return;
+              };
+              if (_that.attr(‘top’)&lt;=_scrollTop) {
+                  _that.find(‘img[data-lazy-src]’).each(function(i,n){
+                      n.src=$(n).data(‘lazy-src’);
+                  });
+                  _that.attr(‘status’,’done’);
+              };
+          })
+      },
+      scroll:function(){
+          $(window).on(‘scroll’,function(){
+              methods.isShow();
+          });
+      },
+      init:function(){
+          methods.setOffsetTop();
+          methods.isShow();
+          methods.scroll();
+      }
+  };
+  methods.init();</p>
   </li>
 </ul>
 
-<p>此页提供了 Markdown 的简单概念， <a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md" title="Markdown Syntax">语法说明</a> 页提供了完整详细的文档，说明了每项功能。但是 Markdown 其实很简单就可以上手，此页文档提供了一些范例，并且每个范例都会提供输出的 HTML 结果。</p>
+<p>}</p>
 
-<p>其实直接试试看也是一个很不错的方法， <a href="http://daringfireball.net/projects/markdown/dingus" title="Markdown Dingus">Dingus</a> 是一个网页应用程序，你可以把自已编写的 Markdown 文档转成 XHTML。</p>
+<p>//第二种方法</p>
 
-<h2 id="段落标题区块代码">段落、标题、区块代码</h2>
+<p>var exist=(function($){
+	var timer=null,
+	temp=[].slice.call($(‘.container’));
+	ret={};</p>
 
-<p>一个段落是由一个以上的连接的行句组成，而一个以上的空行则会划分出不同的段落（空行的定义是显示上看起来像是空行，就被视为空行，例如有一行只有空白和 tab，那该行也会被视为空行），一般的段落不需要用空白或换行缩进。</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>for(var i=0,len=temp.length-1;i&lt;=len;i++){
+	ret[i]=temp[i];
+}
+var isExist=function(winTop,winEnd){
+	for(var i in ret){
+		console.log(ret);
+		var item=ret[i],
+		eleTop=item.offsetTop,
+		eleEnd=eleTop+item.offsetHeight;
 
-<p>Markdown 支持两种标题的语法，<a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> 和 <a href="http://www.aaronsw.com/2002/atx/">atx</a> 形式。Setext 形式是用底线的形式，利用 <code class="highlighter-rouge">=</code> （最高阶标题）和 <code class="highlighter-rouge">-</code> （第二阶标题），Atx 形式在行首插入 1 到 6 个 <code class="highlighter-rouge">#</code> ，对应到标题 1 到 6 阶。</p>
-
-<p>区块引用则使用 email 形式的 ‘<code class="highlighter-rouge">&gt;</code>’ 角括号。</p>
-
-<p>Markdown 语法:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>A First Level Header
-====================
-A Second Level Header
----------------------
-
-Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.
-
-The quick brown fox jumped over the lazy
-dog's back.
-### Header 3
-
-&gt; This is a blockquote.
-&gt; 
-&gt; This is the second paragraph in the blockquote.
-&gt;
-&gt; ## This is an H2 in a blockquote
+		if((eleTop&gt;winTop&amp;&amp;eleTop&lt;=winEnd)||(eleEnd&gt;winTop&amp;&amp;eleEnd&lt;=winEnd)){
+			$(item).css('background','none');
+			new Tab($(item).attr('id'),data).init;
+			delete ret[i];
+		}
+	}
+}
+return {
+	timer:timer;
+	isExist:isExist;
+}; })($);
 </code></pre>
 </div>
 
-<p>输出 HTML 为：
-	&lt;h1&gt;A First Level Header&lt;/h1&gt;
-	&lt;h2&gt;A Second Level Header&lt;/h2&gt;
-	&lt;p&gt;Now is the time for all good men to come to
-	the aid of their country. This is just a
-	regular paragraph.&lt;/p&gt;
-	&lt;p&gt;The quick brown fox jumped over the lazy
-	dog’s back.&lt;/p&gt;
-	&lt;h3&gt;Header 3&lt;/h3&gt;
-	&lt;blockquote&gt;
-	&lt;p&gt;This is a blockquote.&lt;/p&gt;
-	&lt;p&gt;This is the second paragraph in the blockquote.&lt;/p&gt;
-	&lt;h2&gt;This is an H2 in a blockquote&lt;/h2&gt;
-	&lt;/blockquote&gt;</p>
+<p>//第三种方法
+Zepto(function ($) {
+    var swiper = new Swiper(‘.swiper-container’, {
+        pagination: ‘.swiper-pagination’,
+        paginationClickable: true,
+        autoplay: 3000,
+        loop: true,
+        autoplayDisableOnInteraction: false
+    });
+    (function lazyLoad() {
+        var imgs = $(“.lazyLoad”);
+        var src = ‘’;
+        $.each(imgs, function (index, item) {
+            src = $(item).attr(‘data-src’);
+            $(item).attr(‘src’, src);
+        });
+    })();
+});
+$(function () {
+    var lazyLoadTimerId = null;
+    /// 智能加载事件
+    $(window).bind(“scroll”, function () {
+        clearTimeout(lazyLoadTimerId);
+        lazyLoadTimerId = setTimeout(function () {
+            // 延迟加载所有图片
+            var isHttp = (location.protocol === “http:”);
+            $(“#ym_images img”).each(function () {
+                var self = $(this);
+                if (self.filter(“:above-the-fold”).length &gt; 0) {
+                    var originUrl = self.attr(“data-original”);
+                    self.attr(“src”, originUrl);
+                }
+            });
+        }, 500);
+    });
+});</p>
 
-<h3 id="修辞和强调">修辞和强调</h3>
-
-<p>Markdown 使用星号和底线来标记需要强调的区段。</p>
-
-<p>Markdown 语法:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>Some of these words *are emphasized*.
-Some of these words _are emphasized also_.
-Use two asterisks for **strong emphasis**.
-Or, if you prefer, __use two underscores instead__.
+<div class="highlighter-rouge"><pre class="highlight"><code>
+- 某年某月的1号为星期几
+```javascript
+var weekday = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+weekday[new Date(2015, 9, 1).getDay()];	//2015年10月1号
 </code></pre>
 </div>
 
-<p>输出 HTML 为:</p>
+<h4 id="2-mobile---js">2. Mobile - js</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;Some of these words &lt;em&gt;are emphasized&lt;/em&gt;.
-Some of these words &lt;em&gt;are emphasized also&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Use two asterisks for &lt;strong&gt;strong emphasis&lt;/strong&gt;.
-Or, if you prefer, &lt;strong&gt;use two underscores instead&lt;/strong&gt;.&lt;/p&gt;
+<ul>
+  <li><a href="http://caibaojian.com/browser-ios-or-android.html">js 判断IOS, 安卓</a>
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">u</span> <span class="o">=</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">,</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">appVersion</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">isAndroid</span> <span class="o">=</span> <span class="nx">u</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'Android'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="nx">u</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'Linux'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">//android终端或者uc浏览器</span>
+<span class="kd">var</span> <span class="nx">isiOS</span> <span class="o">=</span> <span class="o">!!</span><span class="nx">u</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/</span><span class="se">\(</span><span class="sr">i</span><span class="se">[^</span><span class="sr">;</span><span class="se">]</span><span class="sr">+;</span><span class="se">(</span><span class="sr"> U;</span><span class="se">)?</span><span class="sr"> CPU.+Mac OS X/</span><span class="p">);</span> <span class="c1">//ios终端</span>
+<span class="nx">alert</span><span class="p">(</span><span class="s1">'是否是Android：'</span><span class="o">+</span><span class="nx">isAndroid</span><span class="p">);</span>
+<span class="nx">alert</span><span class="p">(</span><span class="s1">'是否是iOS：'</span><span class="o">+</span><span class="nx">isiOS</span><span class="p">);</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h4 id="3-微信-weixin">3. <a href="http://loo2k.com/blog/detecting-wechat-client/">微信 weixin</a></h4>
+
+<ul>
+  <li>UserAgent 判断微信客户端
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12F70 MicroMessenger/6.1.5 NetType/WIFI</span>
+<span class="kd">function</span> <span class="nx">isWechat</span><span class="p">()</span> <span class="p">{</span>  
+  <span class="kd">var</span> <span class="nx">ua</span> <span class="o">=</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+  <span class="k">return</span> <span class="sr">/micromessenger/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">ua</span><span class="p">)</span> <span class="o">||</span> <span class="sr">/windows phone/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">ua</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>JS接口安全域名不填写，分享onMenuShareAppMessage直接会取默认值。
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// 分享onMenuShareAppMessage直接会取默认值</span>
+</code></pre>
+    </div>
+  </li>
+  <li>关闭当前页面
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">WeixinJSBridge</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">'closeWindow'</span><span class="p">);</span>
+</code></pre>
+    </div>
+  </li>
+  <li><a href="http://www.cnblogs.com/true_to_me/p/3565039.html">支付接口方法调用必须在addevent里边调用</a>
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'WeixinJSBridgeReady'</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">onBridgeReady</span><span class="p">(){</span>
+  <span class="nx">that</span><span class="p">.</span><span class="nx">initOrder</span><span class="p">();</span>
+<span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+</code></pre>
+    </div>
+  </li>
+  <li>支付接口方法调用必须在
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">WeixinJSBridge</span><span class="p">.</span><span class="nx">invoke</span><span class="p">(</span><span class="s1">'getBrandWCPayRequest'</span><span class="p">,</span> <span class="nx">d</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">err_msg</span> <span class="o">==</span> <span class="s2">"get_brand_wcpay_request:ok"</span><span class="p">){</span>
+      <span class="c1">// alert("支付成功");</span>
+      <span class="c1">// union.release(d.orderId);</span>
+      <span class="nx">resetUrl</span><span class="p">();</span>
+      <span class="nx">paySuccess</span><span class="p">(</span><span class="s1">'home'</span><span class="p">,</span> <span class="nx">d</span><span class="p">.</span><span class="nx">orderId</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">cancelOrder</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">orderId</span><span class="p">);</span>
+      <span class="c1">// alert(res.err_msg);</span>
+  <span class="p">}</span>
+  <span class="nx">loading</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre>
+    </div>
+  </li>
+  <li>瀑布流无限加载实例
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// be dependent on jquery &amp; jquery.infinitescroll.min.js</span>
+<span class="c1">// insert this '&lt;div id="more"&gt;&lt;a href="api?page="&gt;&lt;/a&gt;&lt;/div&gt;' to your page.html</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">$container</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'.list-wrap-gd'</span><span class="p">);</span>
+    <span class="kd">function</span> <span class="nx">layOutCallBack</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$container</span><span class="p">.</span><span class="nx">imagesLoaded</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">$container</span><span class="p">.</span><span class="nx">masonry</span><span class="p">({</span>
+                <span class="na">itemSelector</span><span class="p">:</span> <span class="s1">'.item-bar'</span><span class="p">,</span>
+                <span class="na">gutter</span><span class="p">:</span> <span class="mi">10</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+        <span class="nx">$container</span><span class="p">.</span><span class="nx">imagesLoaded</span><span class="p">().</span><span class="nx">progress</span><span class="p">(</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$container</span><span class="p">.</span><span class="nx">masonry</span><span class="p">(</span><span class="s1">'layout'</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="nx">layOutCallBack</span><span class="p">();</span>
+
+    <span class="nx">$container</span><span class="p">.</span><span class="nx">infinitescroll</span><span class="p">({</span>
+        <span class="na">navSelector</span> <span class="p">:</span> <span class="s2">"#more"</span><span class="p">,</span>
+        <span class="na">nextSelector</span> <span class="p">:</span> <span class="s2">"#more a"</span><span class="p">,</span>
+        <span class="na">itemSelector</span> <span class="p">:</span> <span class="s2">".item-bar"</span><span class="p">,</span>
+        <span class="na">pixelsFromNavToBottom</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+        <span class="na">loading</span><span class="p">:{</span>
+            <span class="na">img</span><span class="p">:</span> <span class="s2">"/images/masonry_loading.gif"</span><span class="p">,</span>
+            <span class="na">msgText</span><span class="p">:</span> <span class="s1">' '</span><span class="p">,</span>
+            <span class="na">finishedMsg</span><span class="p">:</span> <span class="s2">"&lt;em&gt;已经到最后一页&lt;/em&gt;"</span><span class="p">,</span>
+            <span class="na">finished</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">"#more"</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">"#infscr-loading"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="na">errorCallback</span><span class="p">:</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">unbind</span><span class="p">(</span><span class="s1">'.infscr'</span><span class="p">);</span>
+        <span class="p">},</span>
+        <span class="na">pathParse</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">nextPage</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">keyword</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#search_keyword"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="kd">var</span> <span class="nx">cat_id</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#cat_id"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="kd">var</span> <span class="nx">brand_id</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#brand_id"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="kd">var</span> <span class="nx">country_id</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#country_id"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="nx">query</span> <span class="o">=</span> <span class="nx">query</span> <span class="o">+</span> <span class="s2">"&amp;namekeyword="</span><span class="o">+</span><span class="nx">keyword</span><span class="p">;</span>
+            <span class="nx">query</span> <span class="o">=</span> <span class="nx">query</span> <span class="o">+</span><span class="s2">"&amp;cat_id="</span><span class="o">+</span><span class="nx">cat_id</span>
+            <span class="nx">query</span> <span class="o">=</span> <span class="nx">query</span> <span class="o">+</span> <span class="s2">"&amp;brand_id="</span> <span class="o">+</span> <span class="nx">brand_id</span><span class="p">;</span> 
+            <span class="nx">query</span> <span class="o">=</span> <span class="nx">query</span> <span class="o">+</span> <span class="s2">"&amp;country_id="</span> <span class="o">+</span> <span class="nx">country_id</span><span class="p">;</span>
+            <span class="nx">path</span> <span class="o">=</span> <span class="p">[</span><span class="nx">path</span><span class="p">,</span><span class="nx">query</span><span class="p">];</span>
+            <span class="k">return</span> <span class="nx">path</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="kd">function</span><span class="p">(</span><span class="nx">newElements</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$newElems</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span> <span class="nx">newElements</span> <span class="p">).</span><span class="nx">css</span><span class="p">({</span> <span class="na">opacity</span><span class="p">:</span> <span class="mi">0</span> <span class="p">});</span>
+        <span class="nx">$newElems</span><span class="p">.</span><span class="nx">imagesLoaded</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">$newElems</span><span class="p">.</span><span class="nx">animate</span><span class="p">({</span> <span class="na">opacity</span><span class="p">:</span> <span class="mi">1</span> <span class="p">});</span>
+            <span class="nx">$container</span><span class="p">.</span><span class="nx">masonry</span><span class="p">(</span> <span class="s1">'appended'</span><span class="p">,</span> <span class="nx">$newElems</span><span class="p">,</span> <span class="kc">true</span> <span class="p">);</span>
+            <span class="nx">layOutCallBack</span><span class="p">();</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p><a href="https://www.snip2code.com/Snippet/176582/--iOS-Safari----input---focus-fixed-----">iOS，Safari浏览器，input等表单focus后fixed元素错位问题</a>
+```javascript
+if( /iPhone|iPod|iPad/i.test(navigator.userAgent) ) {
+$(document).on(‘focus’, ‘input, textarea’, function()
+{
+   $(‘header’).css(“position”, ‘absolute’);
+   $(‘footer’).css(“position”, ‘absolute’);</p>
+
+    <p>});</p>
+
+    <p>$(document).on(‘blur’, ‘input, textarea’, function()
+{
+     $(‘header’).css(“position”, ‘fixed’);
+     $(‘footer’).css(“position”, ‘fixed’);</p>
+
+    <p>});
+}</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  
+- 得到地理位置
+```javascript
+function getLocation(callback){
+  if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(
+              function(p){
+                  callback(p.coords.latitude, p.coords.longitude);
+              },
+              function(e){
+                  var msg = e.code + "\n" + e.message;
+              }
+      );
+  }
+}
 </code></pre>
 </div>
 
-<h2 id="列表">列表</h2>
+<ul>
+  <li><a href="http://isux.tencent.com/web-app-rem.html">rem计算适配</a>
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">doc</span><span class="p">,</span> <span class="nx">win</span><span class="p">){</span>
+<span class="kd">var</span> <span class="nx">docEl</span> <span class="o">=</span> <span class="nx">doc</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">,</span>
+    <span class="nx">resizeEvt</span> <span class="o">=</span> <span class="s1">'orientationchange'</span> <span class="k">in</span> <span class="nb">window</span> <span class="p">?</span> <span class="s1">'orientationchange'</span> <span class="p">:</span> <span class="s1">'resize'</span><span class="p">,</span>
+    <span class="nx">recalc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="kd">var</span> <span class="nx">clientWidth</span> <span class="o">=</span> <span class="nx">docEl</span><span class="p">.</span><span class="nx">clientWidth</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">clientWidth</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+        <span class="nx">docEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="p">(</span><span class="nx">clientWidth</span> <span class="o">/</span> <span class="mi">320</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'px'</span><span class="p">;</span>
+    <span class="p">};</span>
 
-<p>无序列表使用星号、加号和减号来做为列表的项目标记，这些符号是都可以使用的，使用星号：</p>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">doc</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+<span class="nx">win</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">resizeEvt</span><span class="p">,</span> <span class="nx">recalc</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">doc</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'DOMContentLoaded'</span><span class="p">,</span> <span class="nx">recalc</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="p">})(</span><span class="nb">document</span><span class="p">,</span> <span class="nb">window</span><span class="p">);</span>
+</code></pre>
+    </div>
+  </li>
+  <li><a href="http://www.html-js.com/article/3041">另外一种rem方案</a>
+```javascript
+var dpr, rem, scale;
+var docEl = document.documentElement;
+var fontEl = document.createElement(‘style’);
+var metaEl = document.querySelector(‘meta[name=”viewport”]’);</li>
+</ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>* Candy.
-* Gum.
-* Booze.
+<p>dpr = window.devicePixelRatio || 1;
+rem = docEl.clientWidth * 2 / 10;
+scale = 1 / dpr;</p>
+
+<p>// 设置viewport，进行缩放，达到高清效果
+metaEl.setAttribute(‘content’, ‘width=’ + dpr * docEl.clientWidth + ‘,initial-scale=’ + scale + ‘,maximum-scale=’ + scale + ‘, minimum-scale=’ + scale + ‘,user-scalable=no’);</p>
+
+<p>// 设置data-dpr属性，留作的css hack之用
+docEl.setAttribute(‘data-dpr’, dpr);</p>
+
+<p>// 动态写入样式
+docEl.firstElementChild.appendChild(fontEl);
+fontEl.innerHTML = ‘html{font-size:’ + rem + ‘px!important;}’;</p>
+
+<p>// 给js调用的，某一dpr下rem和px之间的转换函数
+window.rem2px = function(v) {
+    v = parseFloat(v);
+    return v * rem;
+};
+window.px2rem = function(v) {
+    v = parseFloat(v);
+    return v / rem;
+};</p>
+
+<p>window.dpr = dpr;
+window.rem = rem;</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+- 获取js所在路径
+```js
+function getJsDir (src) {
+    var script = null;
+
+    if (src) {
+        script = [].filter.call(document.scripts, function (v) {
+            return v.src.indexOf(src) !== -1;
+        })[0];
+    } else {
+        script = document.scripts[document.scripts.length - 1];
+    }
+
+    return script ? script.src.substr(0, script.src.lastIndexOf('/')) : script;
+}
 </code></pre>
 </div>
 
-<p>加号：</p>
+<ul>
+  <li>从全局捕获错误
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">errMsg</span><span class="p">,</span> <span class="nx">scriptURI</span><span class="p">,</span> <span class="nx">lineNumber</span><span class="p">,</span> <span class="nx">columnNumber</span><span class="p">,</span> <span class="nx">errorObj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">rst</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="s2">"错误信息："</span><span class="p">:</span> <span class="nx">errMsg</span><span class="p">,</span>
+          <span class="s2">"出错文件："</span><span class="p">:</span> <span class="nx">scriptURI</span><span class="p">,</span>
+          <span class="s2">"出错行号："</span><span class="p">:</span> <span class="nx">lineNumber</span><span class="p">,</span>
+          <span class="s2">"出错列号："</span><span class="p">:</span> <span class="nx">columnNumber</span><span class="p">,</span>
+          <span class="s2">"错误详情："</span><span class="p">:</span> <span class="nx">errorObj</span>
+      <span class="p">};</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>+ Candy.
-+ Gum.
-+ Booze.
+      <span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">rst</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span>
+  <span class="p">});</span>
+<span class="p">};</span>
 </code></pre>
-</div>
-
-<p>和减号</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>- Candy.
-- Gum.
-- Booze.
+    </div>
+  </li>
+  <li><a href="https://www.zhihu.com/question/26228251/answer/32405529">如何通过 js 修改微信浏览器的title?</a>
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">$body</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s1">'title'</span><span class="p">;</span> <span class="c1">// hack在微信等webview中无法修改document.title的情况    </span>
+<span class="kd">var</span> <span class="nx">$iframe</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;iframe src="/favicon.ico"&gt;&lt;/iframe&gt;'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'load'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span> 
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span> 
+      <span class="nx">$iframe</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span><span class="s1">'load'</span><span class="p">).</span><span class="nx">remove</span><span class="p">()</span> 
+  <span class="p">},</span> <span class="mi">0</span><span class="p">)</span> 
+<span class="p">}).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$body</span><span class="p">)</span>
 </code></pre>
-</div>
+    </div>
+  </li>
+</ul>
 
-<p>都会输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;ul&gt;
-&lt;li&gt;Candy.&lt;/li&gt;
-&lt;li&gt;Gum.&lt;/li&gt;
-&lt;li&gt;Booze.&lt;/li&gt;
-&lt;/ul&gt;
+<h4 id="1-常用方法---js">1. 常用方法 - js</h4>
+<ul>
+  <li>字符串长度截取
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">cutstr</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">len</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">temp</span><span class="p">,</span>
+      <span class="nx">icount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nx">patrn</span> <span class="o">=</span> <span class="sr">/</span><span class="se">[^\x</span><span class="sr">00-</span><span class="se">\x</span><span class="sr">ff</span><span class="se">]</span><span class="sr">/</span><span class="err">，</span>
+      <span class="nx">strre</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">icount</span> <span class="o">&lt;</span> <span class="nx">len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">temp</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+              <span class="k">if</span> <span class="p">(</span><span class="nx">patrn</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">temp</span><span class="p">)</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="nx">icount</span> <span class="o">=</span> <span class="nx">icount</span> <span class="o">+</span> <span class="mi">1</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+              <span class="nx">icount</span> <span class="o">=</span> <span class="nx">icount</span> <span class="o">+</span> <span class="mi">2</span>
+          <span class="p">}</span>
+          <span class="nx">strre</span> <span class="o">+=</span> <span class="nx">temp</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">strre</span> <span class="o">+</span> <span class="s2">"..."</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>有序的列表则是使用一般的数字接着一个英文句点作为项目标记：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1. Red
-2. Green
-3. Blue
+    </div>
+  </li>
+  <li>替换全部
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">replaceAll</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span> <span class="nx">s2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span> <span class="s2">"gm"</span><span class="p">),</span> <span class="nx">s2</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;ol&gt;
-&lt;li&gt;Red&lt;/li&gt;
-&lt;li&gt;Green&lt;/li&gt;
-&lt;li&gt;Blue&lt;/li&gt;
-&lt;/ol&gt;
+    </div>
+  </li>
+  <li>清除空格
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">trim</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">reExtraSpace</span> <span class="o">=</span> <span class="sr">/^</span><span class="se">\s</span><span class="sr">*</span><span class="se">(</span><span class="sr">.*</span><span class="se">?)\s</span><span class="sr">+$/</span><span class="p">;</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">reExtraSpace</span><span class="p">,</span> <span class="s2">"$1"</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>如果你在项目之间插入空行，那项目的内容会用 <code class="highlighter-rouge">&lt;p&gt;</code> 包起来，你也可以在一个项目内放上多个段落，只要在它前面缩排 4 个空白或 1 个 tab 。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>* A list item.
-With multiple paragraphs.
-
-* Another item in the list.
+    </div>
+  </li>
+  <li>清除左空格/右空格
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">ltrim</span><span class="p">(</span><span class="nx">s</span><span class="p">){</span> <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span> <span class="sr">/^</span><span class="se">(\s</span><span class="sr">*|　*</span><span class="se">)</span><span class="sr">/</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span> <span class="p">}</span> 
+<span class="kd">function</span> <span class="nx">rtrim</span><span class="p">(</span><span class="nx">s</span><span class="p">){</span> <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span> <span class="sr">/</span><span class="se">(\s</span><span class="sr">*|　*</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span> <span class="p">}</span>
 </code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;A list item.&lt;/p&gt;
-&lt;p&gt;With multiple paragraphs.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Another item in the list.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt; ### 链接 ###
+    </div>
+  </li>
+  <li>判断是否以某个字符串开头
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">startWith</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>Markdown 支援两种形式的链接语法： <em>行内</em> 和 <em>参考</em> 两种形式，两种都是使用角括号来把文字转成连结。</p>
-
-<p>行内形式是直接在后面用括号直接接上链接：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>This is an [example link](http://example.com/).
+    </div>
+  </li>
+  <li>判断是否以某个字符串结束
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">endWith</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span><span class="nx">d</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">==</span> <span class="nx">d</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;This is an &lt;a href="http://example.com/"&gt;
-example link&lt;/a&gt;.&lt;/p&gt;
+    </div>
+  </li>
+  <li>转义html标签
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">HtmlEncode</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;/g</span><span class="p">,</span> <span class="s1">'&amp;'</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\"</span><span class="sr">/g</span><span class="p">,</span> <span class="s1">'"'</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;/g</span><span class="p">,</span> <span class="s1">'&lt;'</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&gt;/g</span><span class="p">,</span> <span class="s1">'&gt;'</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>你也可以选择性的加上 title 属性：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>This is an [example link](http://example.com/ "With a Title").
+    </div>
+  </li>
+  <li>时间日期格式转换
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">Format</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">formatStr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">formatStr</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">Week</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'日'</span><span class="p">,</span> <span class="s1">'一'</span><span class="p">,</span> <span class="s1">'二'</span><span class="p">,</span> <span class="s1">'三'</span><span class="p">,</span> <span class="s1">'四'</span><span class="p">,</span> <span class="s1">'五'</span><span class="p">,</span> <span class="s1">'六'</span><span class="p">];</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/yyyy|YYYY/</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">());</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/yy|YY/</span><span class="p">,</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getYear</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="p">?</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getYear</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span> <span class="p">:</span> <span class="s1">'0'</span> <span class="o">+</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getYear</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span><span class="p">));</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/MM/</span><span class="p">,</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="p">?</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span> <span class="p">:</span> <span class="s1">'0'</span> <span class="o">+</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/M/g</span><span class="p">,</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/w|W/g</span><span class="p">,</span> <span class="nx">Week</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()]);</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/dd|DD/</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">getDate</span><span class="p">().</span><span class="nx">toString</span><span class="p">()</span> <span class="p">:</span> <span class="s1">'0'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getDate</span><span class="p">());</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/d|D/g</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getDate</span><span class="p">());</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/hh|HH/</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">getHours</span><span class="p">().</span><span class="nx">toString</span><span class="p">()</span> <span class="p">:</span> <span class="s1">'0'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getHours</span><span class="p">());</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/h|H/g</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getHours</span><span class="p">());</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/mm/</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">().</span><span class="nx">toString</span><span class="p">()</span> <span class="p">:</span> <span class="s1">'0'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">());</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/m/g</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">());</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ss|SS/</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">().</span><span class="nx">toString</span><span class="p">()</span> <span class="p">:</span> <span class="s1">'0'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">());</span>
+  <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/s|S/g</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">());</span>
+  <span class="k">return</span> <span class="nx">str</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;This is an &lt;a href="http://example.com/" title="With a Title"&gt;
-example link&lt;/a&gt;.&lt;/p&gt;
+    </div>
+  </li>
+  <li>判断是否为数字类型
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">isDigit</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">patrn</span> <span class="o">=</span> <span class="sr">/^</span><span class="se">[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">*$/</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">patrn</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">false</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>参考形式的链接让你可以为链接定一个名称，之后你可以在文件的其他地方定义该链接的内容：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>I get 10 times more traffic from [Google][1] than from
-[Yahoo][2] or [MSN][3].
-
-[1]: http://google.com/ "Google"
-[2]: http://search.yahoo.com/ "Yahoo Search"
-[3]: http://search.msn.com/ "MSN Search"
+    </div>
+  </li>
+  <li>设置cookie值
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">setCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">Hours</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">offset</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">utc</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">getTimezoneOffset</span><span class="p">()</span> <span class="o">*</span> <span class="mi">60000</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">nd</span> <span class="o">=</span> <span class="nx">utc</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3600000</span> <span class="o">*</span> <span class="nx">offset</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">exp</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">nd</span><span class="p">);</span>
+  <span class="nx">exp</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="nx">exp</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">+</span> <span class="nx">Hours</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">"="</span> <span class="o">+</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">+</span> <span class="s2">";path=/;expires="</span> <span class="o">+</span> <span class="nx">exp</span><span class="p">.</span><span class="nx">toGMTString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">";domain=360doc.com;"</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;I get 10 times more traffic from &lt;a href="http://google.com/"
-title="Google"&gt;Google&lt;/a&gt; than from &lt;a href="http://search.yahoo.com/"
-title="Yahoo Search"&gt;Yahoo&lt;/a&gt; or &lt;a href="http://search.msn.com/"
-title="MSN Search"&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+    </div>
+  </li>
+  <li>获取cookie值
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s2">"(^| )"</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">"=([^;]*)(;|$)"</span><span class="p">));</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">unescape</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+  <span class="k">return</span> <span class="kc">null</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>title 属性是选择性的，链接名称可以用字母、数字和空格，但是不分大小写：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>I start my morning with a cup of coffee and
-[The New York Times][NY Times].
-
-[ny times]: http://www.nytimes.com/
+    </div>
+  </li>
+  <li>加载样式文件表
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">LoadStyle</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">createStyleSheet</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">cssLink</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'link'</span><span class="p">);</span>
+      <span class="nx">cssLink</span><span class="p">.</span><span class="nx">rel</span> <span class="o">=</span> <span class="s1">'stylesheet'</span><span class="p">;</span>
+      <span class="nx">cssLink</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'text/css'</span><span class="p">;</span>
+      <span class="nx">cssLink</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">head</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+      <span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">cssLink</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;I start my morning with a cup of coffee and
-&lt;a href="http://www.nytimes.com/"&gt;The New York Times&lt;/a&gt;.&lt;/p&gt;
+    </div>
+  </li>
+  <li>返回脚本内容
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">evalscript</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'&lt;script'</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="sr">/&lt;script</span><span class="se">[^\&gt;]</span><span class="sr">*</span><span class="se">?</span><span class="sr">&gt;</span><span class="se">([^\x</span><span class="sr">00</span><span class="se">]</span><span class="sr">*</span><span class="se">?)</span><span class="sr">&lt;</span><span class="se">\/</span><span class="sr">script&gt;/ig</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">while</span><span class="p">(</span><span class="nx">arr</span> <span class="o">=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">s</span><span class="p">))</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">p1</span> <span class="o">=</span> <span class="sr">/&lt;script</span><span class="se">[^\&gt;]</span><span class="sr">*</span><span class="se">?</span><span class="sr">src=</span><span class="se">\"([^\&gt;]</span><span class="sr">*</span><span class="se">?)\"[^\&gt;]</span><span class="sr">*</span><span class="se">?(</span><span class="sr">reload=</span><span class="se">\"</span><span class="sr">1</span><span class="se">\")?(?:</span><span class="sr">charset=</span><span class="se">\"([\w\-]</span><span class="sr">+</span><span class="se">?)\")?</span><span class="sr">&gt;&lt;</span><span class="se">\/</span><span class="sr">script&gt;/i</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[];</span>
+      <span class="nx">arr1</span> <span class="o">=</span> <span class="nx">p1</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">arr1</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">appendscript</span><span class="p">(</span><span class="nx">arr1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">''</span><span class="p">,</span> <span class="nx">arr1</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">arr1</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">p1</span> <span class="o">=</span> <span class="sr">/&lt;script</span><span class="se">(</span><span class="sr">.*</span><span class="se">?)</span><span class="sr">&gt;</span><span class="se">([^\x</span><span class="sr">00</span><span class="se">]</span><span class="sr">+</span><span class="se">?)</span><span class="sr">&lt;</span><span class="se">\/</span><span class="sr">script&gt;/i</span><span class="p">;</span>
+          <span class="nx">arr1</span> <span class="o">=</span> <span class="nx">p1</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+          <span class="nx">appendscript</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="nx">arr1</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">arr1</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'reload='</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<h3 id="图片">图片</h3>
-
-<p>图片的语法和链接很像。</p>
-
-<p>行内形式（title 是选择性的）：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>![alt text](/path/to/img.jpg "Title")
+    </div>
+  </li>
+  <li>清除脚本内容
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">stripscript</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;script.*</span><span class="se">?</span><span class="sr">&gt;.*</span><span class="se">?</span><span class="sr">&lt;</span><span class="se">\/</span><span class="sr">script&gt;/ig</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>参考形式：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>![alt text][id]
-
-[id]: /path/to/img.jpg "Title"
+    </div>
+  </li>
+  <li>动态加载脚本文件
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">appendscript</span><span class="p">(</span><span class="nx">src</span><span class="p">,</span> <span class="nx">text</span><span class="p">,</span> <span class="nx">reload</span><span class="p">,</span> <span class="nx">charset</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">hash</span><span class="p">(</span><span class="nx">src</span> <span class="o">+</span> <span class="nx">text</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">reload</span> <span class="o">&amp;&amp;</span> <span class="nx">in_array</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">evalscripts</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">reload</span> <span class="o">&amp;&amp;</span> <span class="nx">$</span><span class="p">(</span><span class="nx">id</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nx">id</span><span class="p">));</span>
+  <span class="p">}</span>
+ 
+  <span class="nx">evalscripts</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">scriptNode</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"script"</span><span class="p">);</span>
+  <span class="nx">scriptNode</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"text/javascript"</span><span class="p">;</span>
+  <span class="nx">scriptNode</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+  <span class="nx">scriptNode</span><span class="p">.</span><span class="nx">charset</span> <span class="o">=</span> <span class="nx">charset</span> <span class="p">?</span> <span class="nx">charset</span> <span class="p">:</span> <span class="p">(</span><span class="nx">BROWSER</span><span class="p">.</span><span class="nx">firefox</span> <span class="p">?</span> <span class="nb">document</span><span class="p">.</span><span class="nx">characterSet</span> <span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">charset</span><span class="p">);</span>
+  <span class="k">try</span> <span class="p">{</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">src</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">scriptNode</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
+          <span class="nx">scriptNode</span><span class="p">.</span><span class="nx">onloadDone</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+          <span class="nx">scriptNode</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+              <span class="nx">scriptNode</span><span class="p">.</span><span class="nx">onloadDone</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+              <span class="nx">JSLOADED</span><span class="p">[</span><span class="nx">src</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+           <span class="p">};</span>
+           <span class="nx">scriptNode</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+               <span class="k">if</span><span class="p">((</span><span class="nx">scriptNode</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="s1">'loaded'</span> <span class="o">||</span> <span class="nx">scriptNode</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="s1">'complete'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">scriptNode</span><span class="p">.</span><span class="nx">onloadDone</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="nx">scriptNode</span><span class="p">.</span><span class="nx">onloadDone</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                  <span class="nx">JSLOADED</span><span class="p">[</span><span class="nx">src</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+              <span class="p">}</span>
+           <span class="p">};</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+          <span class="nx">scriptNode</span><span class="p">.</span><span class="nx">text</span> <span class="o">=</span> <span class="nx">text</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">scriptNode</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>上面两种方法都会输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;img src="/path/to/img.jpg" alt="alt text" title="Title" /&gt;
+    </div>
+  </li>
+  <li>返回按ID检索的元素对象
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">$</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">!</span><span class="nx">id</span> <span class="p">?</span> <span class="kc">null</span> <span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<h3 id="代码">代码</h3>
-<p>在一般的段落文字中，你可以使用反引号 <code class="highlighter-rouge">`</code> 来标记代码区段，区段内的 <code class="highlighter-rouge">&amp;</code>、<code class="highlighter-rouge">&lt;</code> 和 <code class="highlighter-rouge">&gt;</code> 都会被自动的转换成 HTML 实体，这项特性让你可以很容易的在代码区段内插入 HTML 码：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>I strongly recommend against using any `&lt;blink&gt;` tags.
-
-I wish SmartyPants used named entities like `&amp;mdash;`
-instead of decimal-encoded entites like `&amp;#8212;`.
+    </div>
+  </li>
+  <li>检验URL链接是否有效
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getUrlState</span><span class="p">(</span><span class="nx">URL</span><span class="p">){</span> 
+  <span class="kd">var</span> <span class="nx">xmlhttp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ActiveXObject</span><span class="p">(</span><span class="s2">"microsoft.xmlhttp"</span><span class="p">);</span> 
+  <span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span><span class="nx">URL</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>  
+  <span class="k">try</span><span class="p">{</span>  
+          <span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">Send</span><span class="p">();</span> 
+  <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+  <span class="p">}</span><span class="k">finally</span><span class="p">{</span> 
+      <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span> 
+      <span class="k">if</span><span class="p">(</span><span class="nx">result</span><span class="p">){</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">Status</span><span class="o">==</span><span class="mi">200</span><span class="p">){</span> 
+              <span class="k">return</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> 
+           <span class="p">}</span><span class="k">else</span><span class="p">{</span> 
+                 <span class="k">return</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> 
+           <span class="p">}</span> 
+       <span class="p">}</span><span class="k">else</span><span class="p">{</span> 
+           <span class="k">return</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> 
+       <span class="p">}</span> 
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;I strongly recommend against using any
-&lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
-&lt;p&gt;I wish SmartyPants used named entities like
-&lt;code&gt;&amp;amp;mdash;&lt;/code&gt; instead of decimal-encoded
-entites like &lt;code&gt;&amp;amp;#8212;&lt;/code&gt;.&lt;/p&gt;
+    </div>
+  </li>
+  <li>获取当前路径
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">currentPageUrl</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="k">this</span><span class="p">.</span><span class="nx">href</span> <span class="o">===</span> <span class="s2">"undefined"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">currentPageUrl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">toLowerCase</span><span class="p">();</span>
+<span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+  <span class="nx">currentPageUrl</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">toLowerCase</span><span class="p">();</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>如果要建立一个已经格式化好的代码区块，只要每行都缩进 4 个空格或是一个 tab 就可以了，而 <code class="highlighter-rouge">&amp;</code>、<code class="highlighter-rouge">&lt;</code> 和 <code class="highlighter-rouge">&gt;</code> 也一样会自动转成 HTML 实体。</p>
-
-<p>Markdown 语法:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>If you want your page to validate under XHTML 1.0 Strict,
-you've got to put paragraph tags in your blockquotes:
-
-&lt;blockquote&gt;
-&lt;p&gt;For example.&lt;/p&gt;
-&lt;/blockquote&gt;
+    </div>
+  </li>
+  <li>获取页面高度
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getPageHeight</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nb">document</span><span class="p">,</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">g</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">g</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">,</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">g</span><span class="p">.</span><span class="nx">compatMode</span> <span class="o">==</span> <span class="s2">"BackCompat"</span>
+                  <span class="p">?</span> <span class="nx">a</span>
+                  <span class="p">:</span> <span class="nx">g</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">f</span><span class="p">.</span><span class="nx">scrollHeight</span><span class="p">,</span> <span class="nx">a</span><span class="p">.</span><span class="nx">scrollHeight</span><span class="p">,</span> <span class="nx">d</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
-</div>
-
-<p>输出 HTML 为：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;If you want your page to validate under XHTML 1.0 Strict,
-you've got to put paragraph tags in your blockquotes:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;blockquote&amp;gt;
-&amp;lt;p&amp;gt;For example.&amp;lt;/p&amp;gt;
-&amp;lt;/blockquote&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+    </div>
+  </li>
+  <li>获取页面可视宽度
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getPageViewWidth</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nb">document</span><span class="p">,</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">compatMode</span> <span class="o">==</span> <span class="s2">"BackCompat"</span> <span class="p">?</span> 
+     				   <span class="nx">d</span><span class="p">.</span><span class="nx">body</span><span class="p">:</span> <span class="nx">d</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">clientWidth</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
-</div>
+    </div>
+  </li>
+  <li>获取页面宽度
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getPageWidth</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nb">document</span><span class="p">,</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">g</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">g</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">,</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">g</span><span class="p">.</span><span class="nx">compatMode</span> <span class="o">==</span> <span class="s2">"BackCompat"</span><span class="p">?</span>
+  					  <span class="nx">a</span><span class="p">:</span> <span class="nx">g</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">f</span><span class="p">.</span><span class="nx">scrollWidth</span><span class="p">,</span> <span class="nx">a</span><span class="p">.</span><span class="nx">scrollWidth</span><span class="p">,</span> <span class="nx">d</span><span class="p">.</span><span class="nx">clientWidth</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>随机数时间戳
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">uniqueId</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">a</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">,</span><span class="nx">b</span><span class="o">=</span><span class="nb">parseInt</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nb">Number</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">toString</span><span class="p">()</span><span class="o">+</span><span class="nx">b</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="nx">a</span><span class="p">())</span><span class="o">+</span><span class="nx">b</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="nx">a</span><span class="p">())</span><span class="o">+</span><span class="nx">b</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="nx">a</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>日期格式化函数
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nb">Date</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">format</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">format</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s2">"M+"</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="c1">//month</span>
+      <span class="s2">"d+"</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">getDate</span><span class="p">(),</span>    <span class="c1">//day</span>
+      <span class="s2">"h+"</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">getHours</span><span class="p">(),</span>   <span class="c1">//hour</span>
+      <span class="s2">"m+"</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">(),</span> <span class="c1">//minute</span>
+      <span class="s2">"s+"</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">(),</span> <span class="c1">//second</span>
+      <span class="s2">"q+"</span> <span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="k">this</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span>  <span class="c1">//quarter</span>
+      <span class="s2">"S"</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">getMilliseconds</span><span class="p">()</span> <span class="c1">//millisecond</span>
+  <span class="p">};</span>
+  <span class="k">if</span><span class="p">(</span><span class="sr">/</span><span class="se">(</span><span class="sr">y+</span><span class="se">)</span><span class="sr">/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">format</span><span class="p">))</span> <span class="nx">format</span><span class="o">=</span><span class="nx">format</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nb">RegExp</span><span class="p">.</span><span class="nx">$1</span><span class="p">,</span>
+<span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span><span class="o">+</span><span class="s2">""</span><span class="p">).</span><span class="nx">substr</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">RegExp</span><span class="p">.</span><span class="nx">$1</span><span class="p">.</span><span class="nx">length</span><span class="p">));</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">k</span> <span class="k">in</span> <span class="nx">o</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s2">"("</span><span class="o">+</span> <span class="nx">k</span> <span class="o">+</span><span class="s2">")"</span><span class="p">).</span><span class="nx">test</span><span class="p">(</span><span class="nx">format</span><span class="p">))</span>
+          <span class="nx">format</span> <span class="o">=</span> <span class="nx">format</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nb">RegExp</span><span class="p">.</span><span class="nx">$1</span><span class="p">,</span><span class="nb">RegExp</span><span class="p">.</span><span class="nx">$1</span><span class="p">.</span><span class="nx">length</span><span class="o">==</span><span class="mi">1</span> <span class="p">?</span> <span class="nx">o</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="p">:(</span><span class="s2">"00"</span><span class="o">+</span> <span class="nx">o</span><span class="p">[</span><span class="nx">k</span><span class="p">]).</span><span class="nx">substr</span><span class="p">((</span><span class="s2">""</span><span class="o">+</span> <span class="nx">o</span><span class="p">[</span><span class="nx">k</span><span class="p">]).</span><span class="nx">length</span><span class="p">));</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">format</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//调用</span>
+<span class="c1">//new Date().format("yyyy-MM-dd hh:mm:ss");</span>
+</code></pre>
+    </div>
+  </li>
+  <li>返回顶部的通用方法
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">backTop</span><span class="p">(</span><span class="nx">btnId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">btnId</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">onscroll</span> <span class="o">=</span> <span class="nx">set</span><span class="p">;</span>
+  <span class="nx">btn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">"none"</span><span class="p">;</span>
+  <span class="nx">btn</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">btn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">"none"</span><span class="p">;</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">onscroll</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="nx">d</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">-=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">((</span><span class="nx">d</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">);</span>
+          <span class="nx">b</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">-=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">((</span><span class="nx">d</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">);</span>
+          <span class="k">if</span> <span class="p">((</span><span class="nx">d</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">btn</span><span class="p">.</span><span class="nx">timer</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">onscroll</span> <span class="o">=</span> <span class="nx">set</span><span class="p">);</span>
+          <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="kd">function</span> <span class="nx">set</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">btn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'block'</span><span class="p">:</span> <span class="s2">"none"</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">backTop</span><span class="p">(</span><span class="s1">'goTop'</span><span class="p">);</span>
+</code></pre>
+    </div>
+  </li>
+  <li>获得URL中GET参数值
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// 用法：如果地址是 test.htm?t1=1&amp;t2=2&amp;t3=3, 那么能取得：GET["t1"], GET["t2"], GET["t3"]</span>
+<span class="kd">function</span> <span class="nx">get_get</span><span class="p">(){</span> 
+  <span class="nx">querystr</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"?"</span><span class="p">)</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">querystr</span><span class="p">[</span><span class="mi">1</span><span class="p">]){</span>
+      <span class="nx">GETs</span> <span class="o">=</span> <span class="nx">querystr</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">"&amp;"</span><span class="p">);</span>
+      <span class="nx">GET</span> <span class="o">=</span> <span class="p">[];</span>
+      <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">GETs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="nx">tmp_arr</span> <span class="o">=</span> <span class="nx">GETs</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"="</span><span class="p">)</span>
+            <span class="nx">key</span><span class="o">=</span><span class="nx">tmp_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="nx">GET</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tmp_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">querystr</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>数组去重
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">unique</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/</span><span class="se">[\r\n]</span><span class="sr">+/</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">y</span><span class="o">=</span><span class="s1">''</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">x</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s2">"^"</span><span class="o">+</span><span class="nx">x</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">([^\w])</span><span class="sr">/ig</span><span class="p">,</span><span class="s2">"\\$1"</span><span class="p">)</span><span class="o">+</span><span class="s2">"$"</span><span class="p">,</span><span class="s2">"igm"</span><span class="p">).</span><span class="nx">test</span><span class="p">(</span><span class="nx">y</span><span class="p">)){</span>
+          <span class="nx">y</span><span class="o">+=</span><span class="nx">x</span><span class="o">+</span><span class="s2">"\r\n"</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">y</span>
+<span class="p">};</span>
+</code></pre>
+    </div>
+  </li>
+  <li>按字典顺序，对每行进行数组排序
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">SetSort</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">text</span><span class="o">=</span><span class="nx">K1</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/</span><span class="se">[\r\n]</span><span class="sr">/</span><span class="p">).</span><span class="nx">sort</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\r\n"</span><span class="p">);</span><span class="c1">//顺序</span>
+  <span class="kd">var</span> <span class="nx">test</span><span class="o">=</span><span class="nx">K1</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/</span><span class="se">[\r\n]</span><span class="sr">/</span><span class="p">).</span><span class="nx">sort</span><span class="p">().</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\r\n"</span><span class="p">);</span><span class="c1">//反序</span>
+  <span class="nx">K1</span><span class="p">.</span><span class="nx">value</span><span class="o">=</span><span class="nx">K1</span><span class="p">.</span><span class="nx">value</span><span class="o">!=</span><span class="nx">text</span><span class="p">?</span><span class="nx">text</span><span class="p">:</span><span class="nx">test</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>字符串反序输出
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">IsReverse</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">text</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">''</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>金额大写转换函数
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">//格式转换</span>
+<span class="kd">function</span> <span class="nx">transform</span><span class="p">(</span><span class="nx">tranvalue</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">dw2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="s2">"万"</span><span class="p">,</span> <span class="s2">"亿"</span><span class="p">);</span> <span class="c1">//大单位</span>
+      <span class="kd">var</span> <span class="nx">dw1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="s2">"拾"</span><span class="p">,</span> <span class="s2">"佰"</span><span class="p">,</span> <span class="s2">"仟"</span><span class="p">);</span> <span class="c1">//小单位</span>
+      <span class="kd">var</span> <span class="nx">dw</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="s2">"零"</span><span class="p">,</span> <span class="s2">"壹"</span><span class="p">,</span> <span class="s2">"贰"</span><span class="p">,</span> <span class="s2">"叁"</span><span class="p">,</span> <span class="s2">"肆"</span><span class="p">,</span> <span class="s2">"伍"</span><span class="p">,</span> <span class="s2">"陆"</span><span class="p">,</span> <span class="s2">"柒"</span><span class="p">,</span> <span class="s2">"捌"</span><span class="p">,</span> <span class="s2">"玖"</span><span class="p">);</span> <span class="c1">//整数部分用</span>
+      <span class="c1">//以下是小写转换成大写显示在合计大写的文本框中     </span>
+      <span class="c1">//分离整数与小数</span>
+      <span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">splits</span><span class="p">(</span><span class="nx">tranvalue</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">source</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+      <span class="kd">var</span> <span class="nx">dig</span> <span class="o">=</span> <span class="nx">source</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+      <span class="c1">//转换整数部分</span>
+      <span class="kd">var</span> <span class="nx">k1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//计小单位</span>
+      <span class="kd">var</span> <span class="nx">k2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//计大单位</span>
+      <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">source</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span> <span class="c1">//整数的长度</span>
+      <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">source</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">len</span> <span class="o">-</span> <span class="nx">i</span><span class="p">);</span> <span class="c1">//取得某个位数上的数字</span>
+            <span class="kd">var</span> <span class="nx">bn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">len</span> <span class="o">-</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">bn</span> <span class="o">=</span> <span class="nx">source</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">len</span> <span class="o">-</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//取得某个位数前一位上的数字</span>
+            <span class="p">}</span>
+            <span class="nx">sum</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">sum</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">str</span> <span class="o">=</span> <span class="nx">dw</span><span class="p">[</span><span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">)].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span> <span class="c1">//取得该数字对应的大写数字，并插入到str字符串的前面</span>
+              <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">==</span> <span class="s1">'0'</span><span class="p">)</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">len</span> <span class="o">-</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//在数字范围内</span>
+              <span class="k">if</span> <span class="p">(</span><span class="nx">k1</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//加小单位</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">bn</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                      <span class="nx">str</span> <span class="o">=</span> <span class="nx">dw1</span><span class="p">[</span><span class="nx">k1</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="nx">k1</span><span class="o">++</span><span class="p">;</span>
+              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">//不加小单位，加大单位</span>
+                    <span class="nx">k1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                    <span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">temp</span> <span class="o">==</span> <span class="s2">"万"</span> <span class="o">||</span> <span class="nx">temp</span> <span class="o">==</span> <span class="s2">"亿"</span><span class="p">)</span> <span class="c1">//若大单位前没有数字则舍去大单位</span>
+                    <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+                    <span class="nx">str</span> <span class="o">=</span> <span class="nx">dw2</span><span class="p">[</span><span class="nx">k2</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+                    <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">k1</span> <span class="o">==</span> <span class="mi">3</span><span class="p">){</span> <span class="c1">//小单位到千则大单位进一</span>
+              <span class="nx">k2</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="c1">//转换小数部分</span>
+      <span class="kd">var</span> <span class="nx">strdig</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">dig</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">dig</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">strdig</span> <span class="o">+=</span> <span class="nx">dw</span><span class="p">[</span><span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">)]</span> <span class="o">+</span> <span class="s2">"角"</span><span class="p">;</span> <span class="c1">//加数字</span>
+            <span class="p">}</span>
+            <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">dig</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">strdig</span> <span class="o">+=</span> <span class="nx">dw</span><span class="p">[</span><span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">)]</span> <span class="o">+</span> <span class="s2">"分"</span><span class="p">;</span> <span class="c1">//加数字</span>
+            <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="nx">str</span> <span class="o">+=</span> <span class="s2">"元"</span> <span class="o">+</span> <span class="nx">strdig</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s2">"0元"</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">str</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//拆分整数与小数</span>
+<span class="kd">function</span> <span class="nx">splits</span><span class="p">(</span><span class="nx">tranvalue</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+  <span class="nx">temp</span> <span class="o">=</span> <span class="nx">tranvalue</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">temp</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">value</span> <span class="o">=</span> <span class="nx">temp</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
 
-
-	<p><h3><a href="/posts/markdown-basics.html">阅读全文 &raquo;</a></h3></p>
+	<p><h3><a href="/posts/jsjl.html">阅读全文 &raquo;</a></h3></p>
 <hr>
 
 
@@ -450,6 +1034,12 @@ you've got to put paragraph tags in your blockquotes:&lt;/p&gt;
     </a>
   </li>
     
+  <li class="next">
+    <a href="/posts/page7/index.html">
+      下一页 &rarr;
+    </a>
+  </li>
+  
 </ul>
         </div>
         <!-- Blog Sidebar Widgets Column -->
@@ -522,6 +1112,12 @@ you've got to put paragraph tags in your blockquotes:&lt;/p&gt;
 			<div class="row">
                             <div class="col-lg-12">
                 <ul class="list-unstyled">
+				
+                  <li>
+                    <a href="/posts/rightcode.html">
+                      消除魔术字符串
+                    </a>
+                  </li>
 				
                   <li>
                     <a href="/posts/gulp-es6Tes5.html">

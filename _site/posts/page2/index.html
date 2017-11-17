@@ -127,48 +127,80 @@
           <!-- Loop output paged posts -->
 
 <h2>
-  <a href="/posts/test.html">
-    markdown demo
+  <a href="/posts/gulp-es6Tes5.html">
+    Gulp下es6转es5
   </a> 
   <div class="post-date">
 	<span class="glyphicon glyphicon-time"></span>
-	2016-11-30
+	2016-12-01
   </div>
 </h2>
 <hr>
-<h1 id="这是-h1">这是 H1</h1>
+<h2 id="es6转换es5">es6转换es5</h2>
 
-<h2 id="这是-h2">这是 H2</h2>
+<h3 id="1安装依赖">1.安装依赖</h3>
 
-<h6 id="这是-h6">这是 H6</h6>
-
-<h1 id="this-is-an-h1">This is an H1</h1>
-
-<h2 id="this-is-an-h2">This is an H2</h2>
-
-<p>©
-4 &lt; 5</p>
+<p>安装全局 Gulp</p>
 
 <blockquote>
-  <h2 id="这是一个标题">这是一个标题。</h2>
-
-  <ol>
-    <li>这是第一行列表项。</li>
-    <li>这是第二行列表项。</li>
-  </ol>
-
-  <p>给出一些例子代码：</p>
-
-  <div class="highlighter-rouge"><pre class="highlight"><code>return shell_exec("echo $input | $markdown_script");
-</code></pre>
-  </div>
+  <p>npm install -g gulp</p>
 </blockquote>
 
-<p>I get 10 times more traffic from <a href="http://google.com/" title="Google">Google</a> than from
-<a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
+<p>安装项目中使用的 Gulp</p>
 
+<blockquote>
+  <p>npm install –save-dev gulp</p>
+</blockquote>
 
-	<p><h3><a href="/posts/test.html">阅读全文 &raquo;</a></h3></p>
+<p>安装 Gulp 上 Babel 的插件</p>
+
+<blockquote>
+  <p>npm install –save-dev gulp-babel</p>
+</blockquote>
+
+<p>安装 Babel 上将 ES6 转换成 ES5 的插件</p>
+
+<blockquote>
+  <p>npm install –save-dev babel-preset-es2015</p>
+</blockquote>
+
+<hr />
+
+<h3 id="2-gulp-配置">2. Gulp 配置</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"gulp"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">babel</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"gulp-babel"</span><span class="p">);</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"***"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s2">"src/**/*.js"</span><span class="p">)</span><span class="c1">// ES6 源码存放的路径</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">babel</span><span class="p">())</span> 
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s2">"dist"</span><span class="p">));</span> <span class="c1">//转换成 ES5 存放的路径</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+<hr />
+
+<h3 id="3-babel-配置">3. Babel 配置</h3>
+
+<p>在项目根路径创建文件 .babelrc。内容为</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"presets"</span><span class="err">:</span> <span class="p">[</span><span class="s2">"es2015"</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<hr />
+
+<h3 id="4转换">4.转换</h3>
+
+<p>命令行中执行</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span> <span class="o">***</span>
+
+</code></pre>
+</div>
+
+	<p><h3><a href="/posts/gulp-es6Tes5.html">阅读全文 &raquo;</a></h3></p>
 <hr>
 
 
@@ -259,6 +291,12 @@
 			<div class="row">
                             <div class="col-lg-12">
                 <ul class="list-unstyled">
+				
+                  <li>
+                    <a href="/posts/rightcode.html">
+                      消除魔术字符串
+                    </a>
+                  </li>
 				
                   <li>
                     <a href="/posts/gulp-es6Tes5.html">
